@@ -57,6 +57,38 @@
       ],
       "status": "published",
       "visibility": "public"
+    },
+    {
+      "id": "oca-av-001",
+      "title": "Video de YouTube 01 — pendiente de identificar",
+      "type": "video",
+      "categories": [
+        "audiovisual"
+      ],
+      "summary": "Registro pendiente: confirmar el título y el contenido antes de publicar la ficha.",
+      "url": "https://www.youtube.com/watch?v=TJ6ebkYpm_k",
+      "tags": [
+        "youtube",
+        "pendiente de identificar"
+      ],
+      "status": "review",
+      "visibility": "public"
+    },
+    {
+      "id": "oca-av-002",
+      "title": "Video de YouTube 02 — pendiente de identificar",
+      "type": "video",
+      "categories": [
+        "audiovisual"
+      ],
+      "summary": "Registro pendiente: confirmar el título y el contenido antes de publicar la ficha.",
+      "url": "https://www.youtube.com/watch?v=ruDP0Ur2wZ0",
+      "tags": [
+        "youtube",
+        "pendiente de identificar"
+      ],
+      "status": "review",
+      "visibility": "public"
     }
   ]
 }
