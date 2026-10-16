@@ -238,3 +238,34 @@ h1 em,h2 em{font-style:italic;color:#a4472d}
 }
 @media(max-width:380px){.hero{padding-inline:17px}.hero h1{font-size:48px}.hero-kicker{font-size:8px}.hero-stamp{display:none}.work-section{padding-inline:16px}.film-grid{grid-template-columns:1fr}.film-main,.film-side{aspect-ratio:16/11}.film-side{margin-top:0}.doors-grid{grid-template-columns:1fr}.door,.door:nth-child(4),.door:last-child{grid-column:auto;min-height:190px}.door-icon{margin:14px 0 10px}.closing-socials{display:grid;grid-template-columns:1fr 1fr}.closing-socials a{margin-right:0;padding-right:8px}.collection-panel,.results-panel{padding:17px}}
 @media(prefers-reduced-motion:reduce){.film-card img,.door,.primary-link{transition:none!important}}
+
+
+/* UNIVERSO OCARINA · cinco lenguajes visuales propios dentro de una misma casa
+   La identidad común sigue siendo territorial; cada puerta anticipa su mundo. */
+.doors-grid{gap:14px}
+.door{isolation:isolate;min-height:248px;border-radius:3px;transition:transform .24s ease,border-color .24s ease,filter .24s ease}
+.door>*{position:relative;z-index:2}
+.door:before,.door:after{pointer-events:none;z-index:1;transition:opacity .25s ease,transform .35s ease}
+.door:hover{filter:brightness(1.08)}
+.door:hover:before{transform:scale(1.08)}
+.door strong{font-size:clamp(16px,1.5vw,20px)}
+.door-icon{font-size:32px}
+.door-a{--door-color:#f2a16c;background:linear-gradient(145deg,#30231d 0%,#1b1713 68%);border-color:#8e573a55}
+.door-a:before{width:190px;height:125px;right:-30px;top:58px;border:0;border-radius:50% 50% 0 0;background:linear-gradient(180deg,#d78c5144,#d78c5100);opacity:.8;box-shadow:0 -15px 0 -10px #e4ad6b30}
+.door-a:after{content:"";position:absolute;inset:auto 0 0;height:5px;background:linear-gradient(90deg,#8d4e32,#f2a16c,#8d4e32);opacity:.9}
+.door-b{--door-color:#d5e8a0;background:repeating-linear-gradient(0deg,#1c2118 0 23px,#20261b 24px 25px);border-color:#82935a55}
+.door-b:before{width:88px;height:88px;right:16px;top:55px;border:1px solid #d5e8a044;border-radius:50%;opacity:.7;box-shadow:0 0 0 8px #d5e8a00b,0 0 0 17px #d5e8a008}
+.door-b:after{content:")))";position:absolute;right:20px;top:68px;color:#d5e8a055;font:42px/1 ui-monospace,monospace;letter-spacing:-.15em;opacity:.85}
+.door-c{--door-color:#7fe7ff;background:linear-gradient(135deg,#101f2c 0%,#111820 58%,#17202b 100%);border-color:#4db5d855;box-shadow:inset 0 0 32px #21a4d20a}
+.door-c:before{width:160px;height:160px;right:-30px;top:30px;border:1px solid #72dfff4c;border-radius:50%;opacity:.8;box-shadow:0 0 0 12px #72dfff0b,0 0 0 26px #72dfff09,0 0 0 42px #72dfff07}
+.door-c:after{content:"0101  /  1010";position:absolute;right:12px;top:92px;color:#7fe7ff45;font:10px ui-monospace,monospace;letter-spacing:.18em;writing-mode:vertical-rl;opacity:.9}
+.door-c .door-number,.door-c .door-bottom{color:#7fe7ff}
+.door-c .door-icon{filter:drop-shadow(0 0 9px #7fe7ff55)}
+.door-d{--door-color:#d7b9ff;background:linear-gradient(155deg,#25202e 0%,#19171f 70%);border-color:#9b7dc655}
+.door-d:before{width:110px;height:150px;right:20px;top:43px;border:1px solid #d7b9ff33;border-radius:2px;opacity:.7;box-shadow:8px 8px 0 -1px #d7b9ff0b,16px 16px 0 -1px #d7b9ff08}
+.door-d:after{content:"A—Z";position:absolute;right:25px;top:75px;color:#d7b9ff38;font:italic 34px Georgia,serif;opacity:.8}
+.door-e{--door-color:#c9d8a4;background:linear-gradient(145deg,#20261b 0%,#171b14 70%);border-color:#87996b55}
+.door-e:before{width:180px;height:125px;right:-30px;top:58px;border:1px solid #c9d8a42b;border-radius:50%;opacity:.9;box-shadow:0 0 0 14px #c9d8a407,0 0 0 28px #c9d8a406}
+.door-e:after{content:"";position:absolute;right:0;bottom:0;width:100%;height:35%;background:repeating-linear-gradient(165deg,transparent 0 15px,#c9d8a408 16px 17px);opacity:.9}
+@media(max-width:720px){.door{min-height:235px}.door-c:before{right:-48px}.door-c:after{right:8px}.door-a:before{right:-58px}}
+@media(max-width:380px){.door,.door:nth-child(4),.door:last-child{min-height:205px}}
