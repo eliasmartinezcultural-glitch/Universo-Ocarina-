@@ -64,11 +64,20 @@
     if (item.type === "video" && youtubeId(safeHref)) {
       const videoId = youtubeId(safeHref);
       media = '<div class="catalog-media catalog-video"><iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '" title="Video: ' + title + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>';
-      action = '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>';
-    } else if (item.type === "radio" && /^https?:\/\//i.test(String(item.stream_url || ""))) {
+      action = '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Abrir video fuera de la página ↗</a>';
+    } else if (item.type === "radio" && /^https?:\\/\\//i.test(String(item.stream_url || ""))) {
       const streamUrl = escapeHtml(String(item.stream_url));
-      media = '<div class="catalog-media catalog-audio"><p>TRANSMISIÓN EN VIVO</p><audio controls preload="none" src="' + streamUrl + '">Tu navegador no puede reproducir este audio.</audio><p class="audio-status" aria-live="polite" data-state="idle">Lista para reproducir. Pulsá el botón de reproducción.</p></div>';
-      action = '<a href="' + streamUrl + '" target="_blank" rel="noopener noreferrer">Abrir señal ↗</a>';
+      media = '<div class="catalog-media catalog-audio"><p>SEÑAL EN VIVO · COLONIA RADIANTE</p><audio controls preload="none" src="' + streamUrl + '">Tu navegador no puede reproducir este audio.</audio><p class="audio-status" aria-live="polite" data-state="idle">Lista para reproducir. Pulsá el botón de reproducción.</p></div>';
+      action = '';
+    } else if (item.type === "fotografia" || item.type === "documental" || (item.thumbnail && item.type === "otro")) {
+      const imageUrl = String(item.thumbnail || (/\\.(?:avif|gif|jpe?g|png|webp)(?:[?#].*)?$/i.test(safeHref) ? safeHref : ""));
+      if (/^https?:\\/\\//i.test(imageUrl)) {
+        media = '<figure class="catalog-media catalog-photo"><img src="' + escapeHtml(imageUrl) + '" alt="' + title + '" loading="lazy"><figcaption>' + title + '</figcaption></figure>';
+        action = '';
+      }
+    } else if (item.type === "audio" && /^https?:\\/\\//i.test(safeHref)) {
+      media = '<div class="catalog-media catalog-audio"><p>AUDIO DEL ARCHIVO</p><audio controls preload="none" src="' + escapeHtml(safeHref) + '">Tu navegador no puede reproducir este audio.</audio></div>';
+      action = '';
     }
     return '<article class="result-item"><div class="result-copy"><strong>' + title + '</strong><p>' + category + (description ? " · " + description : "") + '</p></div>' + media + '<div class="result-actions">' + action + '</div></article>';
   }
