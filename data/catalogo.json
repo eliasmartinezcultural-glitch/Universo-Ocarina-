@@ -185,6 +185,7 @@
         "territorio"
       ],
       "summary": "Un punto de encuentro digital para conectar proyectos, recursos e iniciativas vinculadas con San Patricio del Chañar. Una base para ordenar accesos y hacer más fácil encontrar lo que existe en el territorio.",
+      "site_url": "https://eliasmartinezcultural-glitch.github.io/chanar-hub/",
       "tags": [
         "portal",
         "territorio",
@@ -204,7 +205,8 @@
         "tecnologia",
         "audiovisual"
       ],
-      "summary": "Una puerta audiovisual digital para reunir producciones, registros e historias en formato de video. El repositorio permite seguir la construcción del proyecto; las piezas se irán incorporando al catálogo cuando estén listas para publicarse.",
+      "summary": "Una puerta audiovisual digital para reunir producciones, registros e historias en formato de video. Las piezas se irán incorporando al catálogo cuando estén listas para publicarse.",
+      "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-TV/",
       "tags": [
         "audiovisual",
         "televisión web"
