@@ -70,8 +70,8 @@
       const safeImage = /^(?:https?:\/\/|assets\/images\/)[\w./?&=#%-]+$/i.test(imagePath) ? imagePath : "";
       media = (safeImage ? '<figure class="project-art"><img src="' + escapeHtml(safeImage) + '" alt="' + escapeHtml(item.alt || item.title || "Ilustración del proyecto") + '" loading="lazy"></figure>' : "") + '<div class="project-card-meta"><span>PROYECTO DIGITAL</span><span>ARCHIVO OCARINA</span></div>';
       const links = [];
-      if (siteUrl) links.push('<a href="' + escapeHtml(siteUrl) + '" target="_blank" rel="noopener noreferrer">Abrir sitio ↗</a>');
-      if (safeHref) links.push('<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Ver repositorio ↗</a>');
+      if (siteUrl) links.push('<a class="project-visit" href="' + escapeHtml(siteUrl) + '" target="_blank" rel="noopener noreferrer">Explorar proyecto <span aria-hidden="true">↗</span></a>');
+      else links.push('<span class="project-coming">Experiencia en preparación</span>');
       action = links.join("");
     } else if (item.type === "video" && /\.(?:mp4|webm|ogv)(?:[?#].*)?$/i.test(safeHref)) {
       media = '<div class="catalog-media catalog-video"><video controls preload="metadata" playsinline src="' + escapeHtml(safeHref) + '">Tu navegador no puede reproducir este video.</video></div>';
