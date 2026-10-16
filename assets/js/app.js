@@ -1,16 +1,8 @@
 (() => {
   "use strict";
-  const dataUrl = "data/catalogo.json";
-  const doorGrid = document.getElementById("doorsGrid");
-  const collectionPanel = document.getElementById("collectionPanel");
-  const resultsPanel = document.getElementById("resultsPanel");
-  const searchInput = document.getElementById("searchInput");
-  const clearSearch = document.getElementById("clearSearch");
-  const searchHint = document.getElementById("searchHint");
-  const menuToggle = document.getElementById("menuToggle");
-  const siteNav = document.getElementById("siteNav");
-  let catalog = { categories: [], items: [] };
 
+  const scriptUrl = document.currentScript && document.currentScript.src;
+  const dataUrl = scriptUrl ? new URL("../../data/catalogo.json", scriptUrl).href : "data/catalogo.json";
   const fallbackCategories = [
     {id:"audiovisual",number:"01 / IMAGEN",title:"Audiovisual",description:"Documentales, videos, entrevistas, cortometrajes y fotografía en movimiento."},
     {id:"radio",number:"02 / SONIDO",title:"Radio y sonido",description:"Radio online, programas, entrevistas, archivos de audio y producciones sonoras."},
@@ -18,16 +10,31 @@
     {id:"escritos",number:"04 / IDEAS",title:"Escritos e investigaciones",description:"Textos, documentos, informes, ensayos, investigaciones y proyectos escritos."},
     {id:"territorio",number:"05 / MEMORIA",title:"Cultura, territorio y memoria",description:"Historias locales, personas, lugares, patrimonio, fotografías y memoria regional."}
   ];
+  const $ = id => document.getElementById(id);
+  const doors = $("doorsGrid");
+  const collectionPanel = $("collectionPanel");
+  const resultsPanel = $("resultsPanel");
+  const searchInput = $("searchInput");
+  const clearSearch = $("clearSearch");
+  const searchHint = $("searchHint");
+  const menuToggle = $("menuToggle");
+  const siteNav = $("siteNav");
+  let catalog = {categories:fallbackCategories,items:[]};
 
-  const byId = id => catalog.categories.find(category => category.id === id) || fallbackCategories.find(category => category.id === id);
-  const visibleItems = () => catalog.items.filter(item => item && item.visibility === "public" && item.status === "published");
+  const categoryFor = id => catalog.categories.find(category => category.id === id) || fallbackCategories.find(category => category.id === id);
+  const publicItems = () => catalog.items.filter(item => item && item.visibility === "public" && item.status === "published");
   const normalize = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
   const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
-  const categoryName = id => byId(id)?.title || "Colección";
+  const categoryName = id => (categoryFor(id) || {}).title || "Colección";
+  const itemCategories = item => Array.isArray(item.categories) && item.categories.length ? item.categories : (item.category ? [item.category] : []);
+
+  function safeHash(hash) {
+    try { history.replaceState(null, "", hash); } catch (_) { location.hash = hash; }
+  }
 
   function renderDoorCounts() {
     document.querySelectorAll("[data-category]").forEach(door => {
-      const count = visibleItems().filter(item => (item.categories || [item.category]).includes(door.dataset.category)).length;
+      const count = publicItems().filter(item => itemCategories(item).includes(door.dataset.category)).length;
       door.setAttribute("aria-label", categoryName(door.dataset.category) + (count ? ", " + count + " obras publicadas" : ", todavía sin obras publicadas"));
     });
   }
@@ -36,10 +43,10 @@
     try {
       const url = new URL(String(value || ""));
       if (url.hostname === "youtu.be") return url.pathname.split("/").filter(Boolean)[0] || "";
-      if (url.hostname.endsWith("youtube.com")) {
+      if (url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com")) {
         if (url.pathname === "/watch") return url.searchParams.get("v") || "";
         const parts = url.pathname.split("/").filter(Boolean);
-        if (["embed", "shorts", "live"].includes(parts[0])) return parts[1] || "";
+        if (["embed","shorts","live"].includes(parts[0])) return parts[1] || "";
       }
     } catch (_) {}
     return "";
@@ -48,7 +55,7 @@
   function itemCard(item) {
     const title = escapeHtml(item.title || "Obra sin título");
     const description = escapeHtml(item.summary || "");
-    const category = escapeHtml(categoryName((item.categories || [item.category])[0]));
+    const category = escapeHtml(categoryName(itemCategories(item)[0]));
     const href = String(item.url || "");
     const safeHref = /^https?:\/\//i.test(href) ? href : "";
     let media = "";
@@ -60,36 +67,37 @@
       action = '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>';
     } else if (item.type === "radio" && /^https?:\/\//i.test(String(item.stream_url || ""))) {
       const streamUrl = escapeHtml(String(item.stream_url));
-      media = '<div class="catalog-media catalog-audio"><p>TRANSMISIÓN EN VIVO</p><audio controls preload="none" src="' + streamUrl + '">Tu navegador no puede reproducir este audio. </audio></div>';
+      media = '<div class="catalog-media catalog-audio"><p>TRANSMISIÓN EN VIVO</p><audio controls preload="none" src="' + streamUrl + '">Tu navegador no puede reproducir este audio.</audio></div>';
       action = '<a href="' + streamUrl + '" target="_blank" rel="noopener noreferrer">Abrir señal ↗</a>';
     }
-
     return '<article class="result-item"><div class="result-copy"><strong>' + title + '</strong><p>' + category + (description ? " · " + description : "") + '</p></div>' + media + '<div class="result-actions">' + action + '</div></article>';
   }
 
-  function openCollection(id) {
-    const category = byId(id);
-    if (!category) return;
-    doorGrid.hidden = true;
+  function openCollection(id, updateUrl = true) {
+    const category = categoryFor(id);
+    if (!category || !doors || !collectionPanel || !resultsPanel) return;
+    doors.hidden = true;
     resultsPanel.hidden = true;
     collectionPanel.hidden = false;
-    document.getElementById("collectionNumber").textContent = category.number || "";
-    document.getElementById("collectionTitle").textContent = category.title;
-    document.getElementById("collectionDescription").textContent = category.description;
-    const items = visibleItems().filter(item => (item.categories || [item.category]).includes(id));
-    document.getElementById("collectionCount").textContent = items.length + (items.length === 1 ? " obra publicada" : " obras publicadas");
-    document.getElementById("collectionItems").innerHTML = items.map(itemCard).join("");
-    document.getElementById("emptyState").hidden = items.length > 0;
-    document.getElementById("puertas").scrollIntoView({behavior:"smooth",block:"start"});
-    history.replaceState(null, "", "#coleccion-" + id);
+    $("collectionNumber").textContent = category.number || "";
+    $("collectionTitle").textContent = category.title || "Colección";
+    $("collectionDescription").textContent = category.description || "";
+    const items = publicItems().filter(item => itemCategories(item).includes(id));
+    $("collectionCount").textContent = items.length + (items.length === 1 ? " obra publicada" : " obras publicadas");
+    $("collectionItems").innerHTML = items.map(itemCard).join("");
+    $("emptyState").hidden = items.length > 0;
+    if (updateUrl) safeHash("#coleccion-" + id);
+    $("collectionTitle").focus?.({preventScroll:true});
+    $("collectionPanel").scrollIntoView({behavior:"smooth",block:"start"});
   }
 
   function showDoors() {
-    collectionPanel.hidden = true;
-    resultsPanel.hidden = true;
-    doorGrid.hidden = false;
-    history.replaceState(null, "", "#puertas");
-    document.getElementById("doorsTitle").focus?.();
+    if (collectionPanel) collectionPanel.hidden = true;
+    if (resultsPanel) resultsPanel.hidden = true;
+    if (doors) doors.hidden = false;
+    safeHash("#puertas");
+    $("doorsTitle").focus?.({preventScroll:true});
+    $("puertas").scrollIntoView({behavior:"smooth",block:"start"});
   }
 
   function searchCatalog(query) {
@@ -97,42 +105,49 @@
     clearSearch.hidden = !query;
     if (!q) {
       resultsPanel.hidden = true;
-      doorGrid.hidden = false;
-      searchHint.textContent = visibleItems().length
+      collectionPanel.hidden = true;
+      doors.hidden = false;
+      searchHint.textContent = publicItems().length
         ? "Buscá por título, categoría, tema o palabra clave."
         : "La búsqueda recorrerá el catálogo a medida que incorporemos materiales.";
       return;
     }
     collectionPanel.hidden = true;
-    doorGrid.hidden = true;
+    doors.hidden = true;
     resultsPanel.hidden = false;
-    const results = visibleItems().filter(item => {
-      const categoryLabels = (item.categories || [item.category]).map(categoryName).join(" ");
-      const haystack = normalize([item.title, item.summary, item.author, item.type, categoryLabels, ...(item.tags || [])].join(" "));
-      return haystack.includes(q);
+    const results = publicItems().filter(item => {
+      const labels = itemCategories(item).map(categoryName).join(" ");
+      return normalize([item.title,item.summary,item.author,item.type,labels,...(item.tags || [])].join(" ")).includes(q);
     });
-    document.getElementById("resultsTitle").textContent = "Resultados";
-    document.getElementById("resultsSummary").textContent = results.length
+    $("resultsTitle").textContent = "Resultados";
+    $("resultsSummary").textContent = results.length
       ? results.length + (results.length === 1 ? " coincidencia encontrada." : " coincidencias encontradas.")
       : "No encontramos obras publicadas con esa búsqueda. Probá otra palabra.";
-    document.getElementById("resultsList").innerHTML = results.map(itemCard).join("");
+    $("resultsList").innerHTML = results.map(itemCard).join("");
     searchHint.textContent = "Buscando en el contenido público disponible.";
   }
 
-  document.querySelectorAll("[data-category]").forEach(door => {
-    door.addEventListener("click", event => {
-      event.preventDefault();
-      openCollection(door.dataset.category);
-    });
+  if (!doors || !collectionPanel || !resultsPanel || !searchInput) {
+    console.error("Universo Ocarina: faltan elementos esenciales en index.html.");
+    return;
+  }
+
+  // Delegación: todas las puertas siguen funcionando aunque se modifiquen sus elementos internos.
+  doors.addEventListener("click", event => {
+    const door = event.target.closest("[data-category]");
+    if (!door) return;
+    event.preventDefault();
+    openCollection(door.dataset.category);
   });
-  document.getElementById("backFromCollection").addEventListener("click", showDoors);
-  document.getElementById("backToDoors").addEventListener("click", showDoors);
+  $("backFromCollection").addEventListener("click", showDoors);
+  $("backToDoors").addEventListener("click", showDoors);
   searchInput.addEventListener("input", event => searchCatalog(event.target.value));
   clearSearch.addEventListener("click", () => {
     searchInput.value = "";
     searchCatalog("");
     searchInput.focus();
   });
+
   menuToggle.addEventListener("click", () => {
     const open = siteNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(open));
@@ -142,18 +157,27 @@
     menuToggle.setAttribute("aria-expanded", "false");
   }));
 
-  fetch(dataUrl, {cache:"no-cache"})
-    .then(response => { if (!response.ok) throw new Error("Catálogo no disponible"); return response.json(); })
-    .then(data => {
-      if (Array.isArray(data.categories)) catalog.categories = data.categories;
-      if (Array.isArray(data.items)) catalog.items = data.items;
-      renderDoorCounts();
-      const hash = location.hash.replace("#coleccion-", "");
-      if (fallbackCategories.some(category => category.id === hash)) openCollection(hash);
+  renderDoorCounts();
+  const initialId = location.hash.startsWith("#coleccion-") ? location.hash.slice("#coleccion-".length) : "";
+  if (fallbackCategories.some(category => category.id === initialId)) openCollection(initialId, false);
+
+  fetch(dataUrl, {cache:"no-store"})
+    .then(response => {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      return response.json();
     })
-    .catch(() => {
-      catalog.categories = fallbackCategories;
-      catalog.items = [];
+    .then(data => {
+      if (!data || !Array.isArray(data.categories) || !Array.isArray(data.items)) throw new Error("Formato de catálogo inválido");
+      catalog = {categories:data.categories,items:data.items};
       renderDoorCounts();
+      if (initialId && fallbackCategories.some(category => category.id === initialId)) openCollection(initialId, false);
+      else if (searchInput.value) searchCatalog(searchInput.value);
+    })
+    .catch(error => {
+      // La navegación no depende de que el catálogo cargue: las cinco puertas quedan disponibles.
+      catalog = {categories:fallbackCategories,items:[]};
+      renderDoorCounts();
+      searchHint.textContent = "Las puertas funcionan, pero no se pudo cargar el catálogo. Revisá la publicación de data/catalogo.json.";
+      console.error("Universo Ocarina: no se pudo cargar el catálogo.", error);
     });
 })();
