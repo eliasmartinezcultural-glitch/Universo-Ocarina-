@@ -61,22 +61,22 @@
       "id": "tecnologia",
       "number": "03 / CÓDIGO",
       "title": "Tecnología y proyectos digitales",
-      "description": "Laboratorio digital de Ocarina: herramientas, experiencias y proyectos nacidos de preguntas concretas. Por ahora, cuatro proyectos seleccionados: clima, naturaleza, un portal territorial y televisión web.",
+      "description": "Un laboratorio para visitantes: entrá a cada experiencia, probá sus herramientas y recorré los mundos digitales creados por Ocarina. Acá se muestran los sitios públicos, nunca los archivos internos de desarrollo.",
       "features": [
         {
           "eyebrow": "LABORATORIO",
           "title": "Proyectos seleccionados",
-          "text": "Cuatro desarrollos conectados por una misma raíz territorial y una estética futurista propia."
+          "text": "Cuatro experiencias seleccionadas para descubrir desde sus propias páginas, sin necesidad de conocimientos técnicos."
         },
         {
           "eyebrow": "PROBAR Y EXPLORAR",
-          "title": "Sitios y experiencias",
-          "text": "Cuando hay una versión publicada, se ofrece el acceso directo; también se enlaza el repositorio."
+          "title": "Entrar a la experiencia",
+          "text": "Cada ficha abre únicamente el sitio público del proyecto. La visita empieza en la página, no en sus archivos internos."
         },
         {
-          "eyebrow": "CÓDIGO ABIERTO",
-          "title": "Detrás de cada proyecto",
-          "text": "Acceso a los repositorios para revisar archivos, estructura y evolución de cada herramienta."
+          "eyebrow": "ACCESO PARA VISITANTES",
+          "title": "Una puerta, no un taller",
+          "text": "La interfaz prioriza la experiencia de uso y mantiene fuera de la navegación pública los enlaces a repositorios y código."
         }
       ],
       "cover": "assets/images/door-software.svg",
