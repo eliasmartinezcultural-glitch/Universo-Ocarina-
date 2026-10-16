@@ -143,7 +143,6 @@
         "territorio"
       ],
       "summary": "Una herramienta digital dedicada al tiempo y al clima de San Patricio del Chañar. Reúne la información meteorológica y abre camino a explorar el comportamiento del clima local, con foco en el territorio y en el acceso sencillo a los datos.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-CLIMATICA",
       "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-CLIMATICA/",
       "tags": [
         "clima",
@@ -165,7 +164,6 @@
         "territorio"
       ],
       "summary": "Un archivo educativo para conocer y reconocer la naturaleza cercana: fauna, flora y ambientes de San Patricio del Chañar y la Patagonia. Pensado para aprender a observar, identificar y valorar la vida que tenemos alrededor.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-WILD",
       "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-WILD/",
       "tags": [
         "naturaleza",
@@ -187,7 +185,6 @@
         "territorio"
       ],
       "summary": "Un punto de encuentro digital para conectar proyectos, recursos e iniciativas vinculadas con San Patricio del Chañar. Una base para ordenar accesos y hacer más fácil encontrar lo que existe en el territorio.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/chanar-hub",
       "tags": [
         "portal",
         "territorio",
@@ -208,7 +205,6 @@
         "audiovisual"
       ],
       "summary": "Una puerta audiovisual digital para reunir producciones, registros e historias en formato de video. El repositorio permite seguir la construcción del proyecto; las piezas se irán incorporando al catálogo cuando estén listas para publicarse.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-TV",
       "tags": [
         "audiovisual",
         "televisión web"
