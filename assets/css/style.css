@@ -357,3 +357,42 @@ h1 em,h2 em{font-style:italic;color:#a4472d}
 .catalog-audio .audio-status[data-state="playing"]{color:#d5e8a0}
 .catalog-audio .audio-status[data-state="error"],.catalog-audio .audio-status[data-state="warning"]{color:#ffb19a}
 @media(max-width:720px){.collection-features{grid-template-columns:1fr;gap:8px;margin:18px 0 4px}.collection-feature{padding:13px}.collection-feature strong{font-size:14px}.project-card-meta span{font-size:7px}}
+
+
+/* DIRECCIÓN DE ARTE · cada puerta tiene su propio lenguaje visual */
+.door{isolation:isolate;background-position:center;background-size:cover}
+.door>*{position:relative;z-index:1}
+.door-a{background-image:linear-gradient(180deg,#24181288,#211610f2 80%),url("../images/door-audiovisual.svg");--door-color:#ffb16f;border-color:#a55c3a}
+.door-a:before{border-color:#ffb16f55}
+.door-b{background-image:linear-gradient(180deg,#0d170bd0,#12190ef5 85%),url("../images/door-radio.svg");--door-color:#d9ee8d;border-color:#7b9252}
+.door-b:before{border-color:#d9ee8d77}
+.door-c{background-image:linear-gradient(180deg,#06182766,#071421f5 85%),url("../images/door-software.svg");--door-color:#75e7ff;border-color:#287ca0}
+.door-c:before{border-color:#75e7ff66}
+.door-d{background-image:linear-gradient(180deg,#291d17a8,#261b15f5 85%),url("../images/door-escritos.svg");--door-color:#e7c6a5;border-color:#997457}
+.door-d:before{border-color:#e7c6a566}
+.door-e{background-image:linear-gradient(180deg,#1b2816a8,#172117f5 85%),url("../images/door-territorio.svg");--door-color:#c7e0a3;border-color:#718c60}
+.door-e:before{border-color:#c7e0a366}
+.door-desc{color:#d0c9b8}
+.collection-panel[data-category="audiovisual"]{background:linear-gradient(145deg,#291b15,#15110e);border-color:#915434;color:#fff1df;--acid:#ffb16f;--line:#60402e;--muted:#c5a68e}
+.collection-panel[data-category="radio"]{background:linear-gradient(145deg,#111b12,#0a100b);border-color:#60753e;color:#f0f5d9;--acid:#d9ee8d;--line:#37472c;--muted:#b0bc9a}
+.collection-panel[data-category="tecnologia"]{background:radial-gradient(ellipse at 90% 0%,#10384a 0%,transparent 45%),linear-gradient(145deg,#071521,#0c1119);border-color:#287ca0;color:#e5f8ff;--acid:#75e7ff;--line:#244354;--muted:#9abac7}
+.collection-panel[data-category="escritos"]{background:linear-gradient(145deg,#efe1c7,#ddc7a5);border-color:#b79a72;color:#302219;--acid:#a34e34;--line:#c4a77f;--muted:#705841}
+.collection-panel[data-category="territorio"]{background:linear-gradient(145deg,#e9e3cb,#d1d9b7);border-color:#94a17b;color:#29301f;--acid:#536b3c;--line:#b5c09e;--muted:#58624c}
+.collection-panel[data-category="escritos"] .collection-description,.collection-panel[data-category="territorio"] .collection-description{color:var(--muted)}
+.collection-artwork{margin:22px 0 8px;overflow:hidden;border:1px solid var(--line);background:#0a0d0a}
+.collection-artwork img{display:block;width:100%;max-height:300px;aspect-ratio:16/6;object-fit:cover}
+.collection-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0 8px}
+.collection-feature{min-width:0;padding:17px;border:1px solid var(--line);background:#00000012}
+.collection-feature>span{display:block;color:var(--acid);font:700 9px/1.4 ui-monospace,monospace;letter-spacing:.12em;margin-bottom:10px}
+.collection-feature strong{display:block;color:inherit;font-size:15px;line-height:1.25;margin-bottom:7px}
+.collection-feature p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}
+.project-art{flex:1 1 100%;max-width:620px;margin:8px 0 0;overflow:hidden;border:1px solid #4db5d855;background:#071421}
+.project-art img{display:block;width:100%;aspect-ratio:16/7;object-fit:cover}
+.result-item:has(.project-art){align-items:stretch;background:linear-gradient(135deg,#10202b,#141a1d);border-color:#2b6279}
+.result-item:has(.project-art) .result-copy strong{color:#e4f8ff;font-size:16px}
+.result-item:has(.project-art) .result-copy p{color:#a5c0cb;line-height:1.7}
+.result-item:has(.project-art) .result-actions{flex:1 1 100%;display:flex;flex-wrap:wrap;gap:10px}
+.result-item:has(.project-art) .result-actions a{display:inline-flex;padding:10px 13px;border:1px solid #4cb9d366;color:#8ceaff;font-size:10px;text-transform:uppercase;letter-spacing:.07em}
+.collection-panel[data-category="escritos"] .collection-feature,.collection-panel[data-category="territorio"] .collection-feature{background:#ffffff45}
+.collection-panel[data-category="escritos"] .collection-meta,.collection-panel[data-category="territorio"] .collection-meta{color:#5c5b47}
+@media(max-width:720px){.collection-artwork img{aspect-ratio:16/9;max-height:230px}.collection-features{grid-template-columns:1fr;gap:8px}.collection-feature{padding:14px}.project-art{max-width:none}.result-item:has(.project-art){gap:10px}}
