@@ -32,14 +32,39 @@
     });
   }
 
+  function youtubeId(value) {
+    try {
+      const url = new URL(String(value || ""));
+      if (url.hostname === "youtu.be") return url.pathname.split("/").filter(Boolean)[0] || "";
+      if (url.hostname.endsWith("youtube.com")) {
+        if (url.pathname === "/watch") return url.searchParams.get("v") || "";
+        const parts = url.pathname.split("/").filter(Boolean);
+        if (["embed", "shorts", "live"].includes(parts[0])) return parts[1] || "";
+      }
+    } catch (_) {}
+    return "";
+  }
+
   function itemCard(item) {
     const title = escapeHtml(item.title || "Obra sin título");
     const description = escapeHtml(item.summary || "");
     const category = escapeHtml(categoryName((item.categories || [item.category])[0]));
     const href = String(item.url || "");
-    const safeHref = /^https?:\/\//i.test(href) ? href : "";
-    return '<article class="result-item"><div><strong>' + title + '</strong><p>' + category + (description ? " · " + description : "") + '</p></div>' +
-      (safeHref ? '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Abrir obra ↗</a>' : "") + '</article>';
+    const safeHref = /^https?:\\/\\//i.test(href) ? href : "";
+    let media = "";
+    let action = safeHref ? '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Abrir obra ↗</a>' : "";
+
+    if (item.type === "youtube_video" && youtubeId(safeHref)) {
+      const videoId = youtubeId(safeHref);
+      media = '<div class="catalog-media catalog-video"><iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '" title="Video: ' + title + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>';
+      action = '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>';
+    } else if (item.type === "radio_live" && /^https?:\\/\\//i.test(String(item.stream_url || ""))) {
+      const streamUrl = escapeHtml(String(item.stream_url));
+      media = '<div class="catalog-media catalog-audio"><p>TRANSMISIÓN EN VIVO</p><audio controls preload="none" src="' + streamUrl + '">Tu navegador no puede reproducir este audio. </audio></div>';
+      action = '<a href="' + streamUrl + '" target="_blank" rel="noopener noreferrer">Abrir señal ↗</a>';
+    }
+
+    return '<article class="result-item"><div class="result-copy"><strong>' + title + '</strong><p>' + category + (description ? " · " + description : "") + '</p></div>' + media + '<div class="result-actions">' + action + '</div></article>';
   }
 
   function openCollection(id) {
