@@ -13,6 +13,7 @@
   const $ = id => document.getElementById(id);
   const doors = $("doorsGrid");
   const collectionPanel = $("collectionPanel");
+  const collectionFeatures = $("collectionFeatures");
   const resultsPanel = $("resultsPanel");
   const searchInput = $("searchInput");
   const clearSearch = $("clearSearch");
@@ -60,22 +61,32 @@
     const safeHref = /^https?:\/\//i.test(href) ? href : "";
     let media = "";
     let action = safeHref ? '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Abrir obra ↗</a>' : "";
+    const siteUrl = /^https?:\/\//i.test(String(item.site_url || "")) ? String(item.site_url) : "";
 
-    if (item.type === "video" && youtubeId(safeHref)) {
+    if (item.type === "proyecto") {
+      media = '<div class="project-card-meta"><span>PROYECTO DIGITAL</span><span>ARCHIVO OCARINA</span></div>';
+      const links = [];
+      if (siteUrl) links.push('<a href="' + escapeHtml(siteUrl) + '" target="_blank" rel="noopener noreferrer">Abrir sitio ↗</a>');
+      if (safeHref) links.push('<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Ver repositorio ↗</a>');
+      action = links.join("");
+    } else if (item.type === "video" && /\.(?:mp4|webm|ogv)(?:[?#].*)?$/i.test(safeHref)) {
+      media = '<div class="catalog-media catalog-video"><video controls preload="metadata" playsinline src="' + escapeHtml(safeHref) + '">Tu navegador no puede reproducir este video.</video></div>';
+      action = '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Abrir archivo de video ↗</a>';
+    } else if (item.type === "video" && youtubeId(safeHref)) {
       const videoId = youtubeId(safeHref);
       media = '<div class="catalog-media catalog-video"><iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '" title="Video: ' + title + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>';
       action = '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Abrir video fuera de la página ↗</a>';
-    } else if (item.type === "radio" && /^https?:\\/\\//i.test(String(item.stream_url || ""))) {
+    } else if (item.type === "radio" && /^https?:\/\//i.test(String(item.stream_url || ""))) {
       const streamUrl = escapeHtml(String(item.stream_url));
       media = '<div class="catalog-media catalog-audio"><p>SEÑAL EN VIVO · COLONIA RADIANTE</p><audio controls preload="none" src="' + streamUrl + '">Tu navegador no puede reproducir este audio.</audio><p class="audio-status" aria-live="polite" data-state="idle">Lista para reproducir. Pulsá el botón de reproducción.</p></div>';
-      action = '';
+      action = '<a href="' + streamUrl + '" target="_blank" rel="noopener noreferrer">Abrir señal en otra pestaña ↗</a>';
     } else if (item.type === "fotografia" || item.type === "documental" || (item.thumbnail && item.type === "otro")) {
-      const imageUrl = String(item.thumbnail || (/\\.(?:avif|gif|jpe?g|png|webp)(?:[?#].*)?$/i.test(safeHref) ? safeHref : ""));
-      if (/^https?:\\/\\//i.test(imageUrl)) {
+      const imageUrl = String(item.thumbnail || (/\.(?:avif|gif|jpe?g|png|webp)(?:[?#].*)?$/i.test(safeHref) ? safeHref : ""));
+      if (/^https?:\/\//i.test(imageUrl)) {
         media = '<figure class="catalog-media catalog-photo"><img src="' + escapeHtml(imageUrl) + '" alt="' + title + '" loading="lazy"><figcaption>' + title + '</figcaption></figure>';
         action = '';
       }
-    } else if (item.type === "audio" && /^https?:\\/\\//i.test(safeHref)) {
+    } else if (item.type === "audio" && /^https?:\/\//i.test(safeHref)) {
       media = '<div class="catalog-media catalog-audio"><p>AUDIO DEL ARCHIVO</p><audio controls preload="none" src="' + escapeHtml(safeHref) + '">Tu navegador no puede reproducir este audio.</audio></div>';
       action = '';
     }
@@ -101,6 +112,15 @@
     });
   }
 
+  function renderCollectionFeatures(category) {
+    if (!collectionFeatures) return;
+    const features = Array.isArray(category.features) ? category.features : [];
+    collectionFeatures.innerHTML = features.map(feature =>
+      '<article class="collection-feature"><span>' + escapeHtml(feature.eyebrow || "") + '</span><strong>' + escapeHtml(feature.title || "") + '</strong><p>' + escapeHtml(feature.text || "") + '</p></article>'
+    ).join("");
+    collectionFeatures.hidden = !features.length;
+  }
+
   function openCollection(id, updateUrl = true) {
     const category = categoryFor(id);
     if (!category || !doors || !collectionPanel || !resultsPanel) return;
@@ -110,6 +130,7 @@
     $("collectionNumber").textContent = category.number || "";
     $("collectionTitle").textContent = category.title || "Colección";
     $("collectionDescription").textContent = category.description || "";
+    renderCollectionFeatures(category);
     const items = publicItems().filter(item => itemCategories(item).includes(id));
     $("collectionCount").textContent = items.length + (items.length === 1 ? " obra publicada" : " obras publicadas");
     $("collectionItems").innerHTML = items.map(itemCard).join("");
