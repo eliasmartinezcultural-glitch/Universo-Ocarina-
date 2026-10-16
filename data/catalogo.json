@@ -11,31 +11,116 @@
       "id": "audiovisual",
       "number": "01 / IMAGEN",
       "title": "Audiovisual",
-      "description": "Documentales, videos, entrevistas, cortometrajes y fotografía en movimiento."
+      "description": "Documentales, videos, entrevistas, cortometrajes y fotografía en movimiento.",
+      "features": [
+        {
+          "eyebrow": "SALA DE REPRODUCCIÓN",
+          "title": "Videos dentro del universo",
+          "text": "Reproductor integrado para registros de YouTube y archivos de video directos."
+        },
+        {
+          "eyebrow": "ARCHIVO VISUAL",
+          "title": "Documentales y registros",
+          "text": "Cada pieza conserva su título, descripción y procedencia cuando esos datos están disponibles."
+        },
+        {
+          "eyebrow": "FOTOGRAFÍA",
+          "title": "Imágenes en contexto",
+          "text": "Galería integrada para fotografías y materiales visuales del territorio."
+        }
+      ]
     },
     {
       "id": "radio",
       "number": "02 / SONIDO",
       "title": "Radio y sonido",
-      "description": "Radio online, programas, entrevistas, archivos de audio y producciones sonoras."
+      "description": "Radio online, programas, entrevistas, archivos de audio y producciones sonoras.",
+      "features": [
+        {
+          "eyebrow": "AL AIRE",
+          "title": "Escucha integrada",
+          "text": "Reproductor de señal dentro de la página, con estado de conexión y alternativa para abrir el stream."
+        },
+        {
+          "eyebrow": "ARCHIVO SONORO",
+          "title": "Voces y producciones",
+          "text": "Espacio para entrevistas, programas, separadores y paisajes sonoros."
+        },
+        {
+          "eyebrow": "PROGRAMACIÓN",
+          "title": "Una radio con identidad",
+          "text": "La grilla se incorporará con horarios confirmados, sin inventar emisiones ni frecuencias."
+        }
+      ]
     },
     {
       "id": "tecnologia",
       "number": "03 / CÓDIGO",
       "title": "Tecnología y proyectos digitales",
-      "description": "Páginas web, aplicaciones, videojuegos, mapas interactivos y herramientas digitales."
+      "description": "Páginas web, aplicaciones, videojuegos, mapas interactivos y herramientas digitales.",
+      "features": [
+        {
+          "eyebrow": "PROYECTOS PUBLICADOS",
+          "title": "Entrar y probar",
+          "text": "Accesos directos a sitios y experiencias que ya pueden visitarse."
+        },
+        {
+          "eyebrow": "CÓDIGO Y REPOSITORIOS",
+          "title": "Cómo se construyen",
+          "text": "Cada ficha puede abrir el repositorio público para consultar archivos, documentación y avances."
+        },
+        {
+          "eyebrow": "MUNDOS DIGITALES",
+          "title": "Juegos y herramientas",
+          "text": "Videojuegos, portales y utilidades con una estética propia, futurista y experimental."
+        }
+      ]
     },
     {
       "id": "escritos",
       "number": "04 / IDEAS",
       "title": "Escritos e investigaciones",
-      "description": "Textos, documentos, informes, ensayos, investigaciones y proyectos escritos."
+      "description": "Textos, documentos, informes, ensayos, investigaciones y proyectos escritos.",
+      "features": [
+        {
+          "eyebrow": "INVESTIGACIÓN",
+          "title": "Preguntas con fuentes",
+          "text": "Materiales organizados para diferenciar datos, documentos, testimonios e hipótesis."
+        },
+        {
+          "eyebrow": "CUADERNO EDITORIAL",
+          "title": "Textos y documentos",
+          "text": "Informes, ensayos, crónicas y publicaciones que se puedan leer desde la página."
+        },
+        {
+          "eyebrow": "BITÁCORA",
+          "title": "Proceso y versiones",
+          "text": "Cada investigación puede conservar referencias, fecha de revisión y estado del trabajo."
+        }
+      ]
     },
     {
       "id": "territorio",
       "number": "05 / MEMORIA",
       "title": "Cultura, territorio y memoria",
-      "description": "Historias locales, personas, lugares, patrimonio, fotografías y memoria regional."
+      "description": "Historias locales, personas, lugares, patrimonio, fotografías y memoria regional.",
+      "features": [
+        {
+          "eyebrow": "MEMORIA LOCAL",
+          "title": "San Patricio del Chañar",
+          "text": "Historias, lugares y personas contados desde el territorio."
+        },
+        {
+          "eyebrow": "NATURALEZA",
+          "title": "Reconocer para cuidar",
+          "text": "Fauna, flora y paisaje con información clara y fuentes identificables."
+        },
+        {
+          "eyebrow": "PATRIMONIO VIVO",
+          "title": "Lo que merece permanecer",
+          "text": "Fotografías, voces, costumbres y archivos que conectan generaciones."
+        }
+      ]
     }
   ],
   "items": [
@@ -91,6 +176,122 @@
       "status": "published",
       "visibility": "public",
       "thumbnail": "https://img.youtube.com/vi/ruDP0Ur2wZ0/hqdefault.jpg"
+    },
+    {
+      "id": "oca-soft-001",
+      "title": "Villa Pelón — El juego de Ocarina",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia"
+      ],
+      "summary": "Experiencia de juego web ambientada en Villa Pelón. Proyecto público con versión navegable.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/Villa-Pelon---El-juego-de-Ocarina-",
+      "site_url": "https://eliasmartinezcultural-glitch.github.io/VILLA-PELON/",
+      "tags": [
+        "videojuego",
+        "juego web",
+        "Villa Pelón"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public"
+    },
+    {
+      "id": "oca-soft-002",
+      "title": "Ocarina Climática",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "territorio"
+      ],
+      "summary": "Proyecto de información meteorológica y clima con foco en San Patricio del Chañar.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-CLIMATICA",
+      "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-CLIMATICA/",
+      "tags": [
+        "clima",
+        "meteorología",
+        "Chañar"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public"
+    },
+    {
+      "id": "oca-soft-003",
+      "title": "Ocarina Wild",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "territorio"
+      ],
+      "summary": "Archivo educativo para conocer y reconocer la naturaleza del territorio.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-WILD",
+      "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-WILD/",
+      "tags": [
+        "naturaleza",
+        "fauna",
+        "flora"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public"
+    },
+    {
+      "id": "oca-soft-004",
+      "title": "Protocolo Fantasma",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "escritos"
+      ],
+      "summary": "Espacio de análisis, documentos y seguimiento de asuntos públicos locales.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/PROTOCOLO-FANTASMA-",
+      "site_url": "https://eliasmartinezcultural-glitch.github.io/PROTOCOLO-FANTASMA-/",
+      "tags": [
+        "investigación",
+        "documentos",
+        "Chañar"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public"
+    },
+    {
+      "id": "oca-soft-005",
+      "title": "Ocarina TV",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "audiovisual"
+      ],
+      "summary": "Proyecto audiovisual digital de Ocarina. El repositorio permite consultar su estructura y evolución.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-TV",
+      "tags": [
+        "audiovisual",
+        "televisión web"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public"
+    },
+    {
+      "id": "oca-soft-006",
+      "title": "Chañar Hub",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "territorio"
+      ],
+      "summary": "Portal de proyectos y recursos relacionados con San Patricio del Chañar.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/chanar-hub",
+      "tags": [
+        "portal",
+        "territorio",
+        "Chañar"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public"
     }
   ]
 }
