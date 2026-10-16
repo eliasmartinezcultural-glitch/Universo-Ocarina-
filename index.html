@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111310">
+  <meta name="description" content="Universo Ocarina: un archivo vivo de creación, comunicación, tecnología y territorio.">
+  <title>Universo Ocarina — Archivo vivo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="wordmark" href="./" aria-label="Universo Ocarina, inicio">
+      <span class="mark" aria-hidden="true">O</span>
+      <span><strong>UNIVERSO</strong><small>OCARINA</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menú <span aria-hidden="true">☰</span></button>
+    <nav id="siteNav" class="site-nav" aria-label="Navegación principal">
+      <a href="#puertas">Explorar</a>
+      <a href="#sobre">El proyecto</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-kicker"><span class="live-dot" aria-hidden="true"></span> ARCHIVO EN CONSTRUCCIÓN</div>
+      <p class="eyebrow">CREACIÓN · COMUNICACIÓN · TERRITORIO</p>
+      <h1 id="heroTitle">Un universo.<br><em>Muchas formas</em> de contar.</h1>
+      <p class="hero-copy">Un lugar para reunir obras, ideas y proyectos: imágenes, sonidos, historias y herramientas nacidas de la curiosidad y el trabajo.</p>
+      <a class="primary-link" href="#puertas">Entrar al universo <span aria-hidden="true">↘</span></a>
+      <div class="hero-foot"><span>ELÍAS MARTÍNEZ · OCARINA</span><span>ARCHIVO VIVO / 01</span></div>
+    </section>
+
+    <section class="explore section-wrap" id="puertas" aria-labelledby="doorsTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">ELIGE UN CAMINO</p><h2 id="doorsTitle">Cinco puertas.<br><em>Un mismo universo.</em></h2></div>
+        <p class="section-note">Cada puerta reúne un tipo de trabajo. El contenido irá creciendo sin perder su lugar.</p>
+      </div>
+      <div class="search-box">
+        <label for="searchInput">Buscar en el universo</label>
+        <div class="search-control"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar títulos, temas o palabras…" autocomplete="off"><button id="clearSearch" type="button" aria-label="Limpiar búsqueda" hidden>×</button></div>
+        <p class="search-hint" id="searchHint">La búsqueda recorrerá el catálogo a medida que incorporemos materiales.</p>
+      </div>
+      <div class="doors-grid" id="doorsGrid" aria-live="polite">
+        <a class="door door-a" href="#coleccion-audiovisual" data-category="audiovisual"><span class="door-number">01 / IMAGEN</span><span class="door-icon" aria-hidden="true">◉</span><strong>Audiovisual</strong><span class="door-desc">Documentales, videos y fotografía en movimiento.</span><span class="door-bottom">ENTRAR <b aria-hidden="true">↗</b></span></a>
+        <a class="door door-b" href="#coleccion-radio" data-category="radio"><span class="door-number">02 / SONIDO</span><span class="door-icon" aria-hidden="true">)))</span><strong>Radio y sonido</strong><span class="door-desc">Radio online, programas, voces y producciones sonoras.</span><span class="door-bottom">ENTRAR <b aria-hidden="true">↗</b></span></a>
+        <a class="door door-c" href="#coleccion-tecnologia" data-category="tecnologia"><span class="door-number">03 / CÓDIGO</span><span class="door-icon" aria-hidden="true">⌘</span><strong>Tecnología y proyectos digitales</strong><span class="door-desc">Sitios web, aplicaciones, juegos y herramientas.</span><span class="door-bottom">ENTRAR <b aria-hidden="true">↗</b></span></a>
+        <a class="door door-d" href="#coleccion-escritos" data-category="escritos"><span class="door-number">04 / IDEAS</span><span class="door-icon" aria-hidden="true">¶</span><strong>Escritos e investigaciones</strong><span class="door-desc">Textos, documentos, informes e ideas desarrolladas.</span><span class="door-bottom">ENTRAR <b aria-hidden="true">↗</b></span></a>
+        <a class="door door-e" href="#coleccion-territorio" data-category="territorio"><span class="door-number">05 / MEMORIA</span><span class="door-icon" aria-hidden="true">⌁</span><strong>Cultura, territorio y memoria</strong><span class="door-desc">Personas, lugares, patrimonio e historias de la región.</span><span class="door-bottom">ENTRAR <b aria-hidden="true">↗</b></span></a>
+      </div>
+      <section class="results-panel" id="resultsPanel" hidden aria-labelledby="resultsTitle">
+        <div class="results-top"><h3 id="resultsTitle">Resultados</h3><button id="backToDoors" type="button" class="text-button">Volver a las puertas</button></div>
+        <p id="resultsSummary" class="muted"></p>
+        <div id="resultsList" class="results-list"></div>
+      </section>
+      <section class="collection-panel" id="collectionPanel" hidden aria-labelledby="collectionTitle">
+        <button id="backFromCollection" type="button" class="back-link">← Todas las puertas</button>
+        <p class="eyebrow" id="collectionNumber"></p>
+        <h3 id="collectionTitle"></h3>
+        <p id="collectionDescription" class="collection-description"></p>
+        <div class="collection-meta"><span id="collectionCount">0 obras publicadas</span><span>CATÁLOGO EN CRECIMIENTO</span></div>
+        <div id="collectionItems" class="results-list"></div>
+        <div id="emptyState" class="empty-state"><span aria-hidden="true">✳</span><strong>Esta puerta está preparada.</strong><p>El contenido se incorporará aquí cuando esté seleccionado, revisado y listo para publicarse.</p></div>
+      </section>
+    </section>
+
+    <section class="about section-wrap" id="sobre">
+      <div class="about-mark" aria-hidden="true">O.</div>
+      <div><p class="eyebrow">NO ES SOLO UNA GALERÍA</p><h2>Un archivo que <em>puede crecer.</em></h2><p>Universo Ocarina organiza trabajos de distintas épocas y formatos en un mismo lugar. Cada pieza tendrá su ficha, su categoría y un enlace a su origen cuando corresponda.</p></div>
+    </section>
+    <section class="principles section-wrap" aria-label="Principios del archivo">
+      <div><span>01</span><strong>Ordenado</strong><p>Una ficha por obra; varias relaciones si hacen falta.</p></div>
+      <div><span>02</span><strong>Cuidadoso</strong><p>Solo se publica lo que fue seleccionado y revisado.</p></div>
+      <div><span>03</span><strong>Duradero</strong><p>Una estructura preparada para sumar contenido sin rehacer el sitio.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="./"><span class="mark" aria-hidden="true">O</span><span><strong>UNIVERSO</strong><small>OCARINA</small></span></a>
+    <p>Un archivo vivo de creación, comunicación y territorio.</p>
+    <span class="footer-credit">ELABORADO POR ELÍAS MARTÍNEZ</span>
+  </footer>
+  <noscript><p class="noscript">Para explorar las categorías y buscar en el catálogo, activá JavaScript en el navegador. La página no requiere cuentas ni servicios externos.</p></noscript>
+</body>
+</html>
