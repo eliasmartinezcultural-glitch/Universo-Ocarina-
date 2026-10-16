@@ -335,3 +335,25 @@ h1 em,h2 em{font-style:italic;color:#a4472d}
  .compact-explore .door-icon{margin:10px 0 8px}
  .compact-explore .door-bottom{padding-top:12px}
 }
+
+
+/* UNIVERSO OCARINA · estructura de puertas y reproductores integrados · 2026-10-16 */
+.collection-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:24px 0 8px}
+.collection-feature{min-width:0;padding:16px;border:1px solid var(--line);background:linear-gradient(145deg,#20231c,#171a15)}
+.collection-feature>span{display:block;color:var(--door-color,var(--acid));font:700 9px/1.4 ui-monospace,monospace;letter-spacing:.12em;margin-bottom:10px}
+.collection-feature strong{display:block;font-size:15px;line-height:1.2;margin-bottom:7px}
+.collection-feature p{font-size:11px;line-height:1.65;color:var(--muted);margin:0}
+.project-card-meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 2px}
+.project-card-meta span{display:inline-flex;align-items:center;border:1px solid #7fe7ff35;background:#10212a;color:#7fe7ff;padding:7px 9px;font:700 8px/1.2 ui-monospace,monospace;letter-spacing:.1em}
+.result-item:has(.project-card-meta){border-color:#4db5d844;background:linear-gradient(135deg,#17212a,#1a1c19)}
+.result-item:has(.project-card-meta) .result-copy strong{color:#e5f6ff}
+.result-item:has(.project-card-meta) .result-actions{display:flex;flex-wrap:wrap;gap:8px}
+.result-item:has(.project-card-meta) .result-actions a{display:inline-flex;border:1px solid #4db5d866;padding:8px 10px;color:#8deaff;font:700 9px Arial,sans-serif;letter-spacing:.04em}
+.catalog-video video{display:block;width:100%;height:100%;max-height:72vh;background:#050605;object-fit:contain}
+.catalog-audio{padding:clamp(15px,3vw,24px);border:1px solid #8a995d55;background:linear-gradient(145deg,#1e281c,#111811)}
+.catalog-audio>p:first-child{font:700 10px ui-monospace,monospace;letter-spacing:.13em;color:#d5e8a0}
+.catalog-audio audio{display:block;width:100%;min-height:42px;margin:14px 0}
+.catalog-audio .audio-status{font-size:11px;line-height:1.5;color:var(--muted)}
+.catalog-audio .audio-status[data-state="playing"]{color:#d5e8a0}
+.catalog-audio .audio-status[data-state="error"],.catalog-audio .audio-status[data-state="warning"]{color:#ffb19a}
+@media(max-width:720px){.collection-features{grid-template-columns:1fr;gap:8px;margin:18px 0 4px}.collection-feature{padding:13px}.collection-feature strong{font-size:14px}.project-card-meta span{font-size:7px}}
