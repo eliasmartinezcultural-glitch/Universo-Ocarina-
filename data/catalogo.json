@@ -135,6 +135,91 @@
   ],
   "items": [
     {
+      "id": "oca-soft-002",
+      "title": "Ocarina Climática",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "territorio"
+      ],
+      "summary": "Una herramienta digital dedicada al tiempo y al clima de San Patricio del Chañar. Reúne la información meteorológica y abre camino a explorar el comportamiento del clima local, con foco en el territorio y en el acceso sencillo a los datos.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-CLIMATICA",
+      "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-CLIMATICA/",
+      "tags": [
+        "clima",
+        "meteorología",
+        "Chañar"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public",
+      "thumbnail": "assets/images/project-climatica.svg",
+      "alt": "Ilustración de Ocarina Climática: sol, nube y lluvia sobre el horizonte"
+    },
+    {
+      "id": "oca-soft-003",
+      "title": "Ocarina Wild",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "territorio"
+      ],
+      "summary": "Un archivo educativo para conocer y reconocer la naturaleza cercana: fauna, flora y ambientes de San Patricio del Chañar y la Patagonia. Pensado para aprender a observar, identificar y valorar la vida que tenemos alrededor.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-WILD",
+      "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-WILD/",
+      "tags": [
+        "naturaleza",
+        "fauna",
+        "flora"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public",
+      "thumbnail": "assets/images/project-wild.svg",
+      "alt": "Ilustración botánica de Ocarina Wild"
+    },
+    {
+      "id": "oca-soft-006",
+      "title": "Chañar Hub",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "territorio"
+      ],
+      "summary": "Un punto de encuentro digital para conectar proyectos, recursos e iniciativas vinculadas con San Patricio del Chañar. Una base para ordenar accesos y hacer más fácil encontrar lo que existe en el territorio.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/chanar-hub",
+      "tags": [
+        "portal",
+        "territorio",
+        "Chañar"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public",
+      "thumbnail": "assets/images/project-hub.svg",
+      "alt": "Ilustración de nodos conectados de Chañar Hub"
+    },
+    {
+      "id": "oca-soft-005",
+      "title": "Ocarina TV",
+      "type": "proyecto",
+      "categories": [
+        "tecnologia",
+        "audiovisual"
+      ],
+      "summary": "Una puerta audiovisual digital para reunir producciones, registros e historias en formato de video. El repositorio permite seguir la construcción del proyecto; las piezas se irán incorporando al catálogo cuando estén listas para publicarse.",
+      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-TV",
+      "tags": [
+        "audiovisual",
+        "televisión web"
+      ],
+      "author": "Ocarina Producciones",
+      "status": "published",
+      "visibility": "public",
+      "thumbnail": "assets/images/project-tv.svg",
+      "alt": "Ilustración de una pantalla de Ocarina TV"
+    },
+    {
       "id": "oca-rs-001",
       "title": "Colonia Radiante",
       "type": "radio",
@@ -186,91 +271,6 @@
       "status": "published",
       "visibility": "public",
       "thumbnail": "https://img.youtube.com/vi/ruDP0Ur2wZ0/hqdefault.jpg"
-    },
-    {
-      "id": "oca-soft-002",
-      "title": "Ocarina Climática",
-      "type": "proyecto",
-      "categories": [
-        "tecnologia",
-        "territorio"
-      ],
-      "summary": "Una herramienta digital dedicada al tiempo y al clima de San Patricio del Chañar. Reúne la información meteorológica y abre camino a explorar el comportamiento del clima local, con foco en el territorio y en el acceso sencillo a los datos.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-CLIMATICA",
-      "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-CLIMATICA/",
-      "tags": [
-        "clima",
-        "meteorología",
-        "Chañar"
-      ],
-      "author": "Ocarina Producciones",
-      "status": "published",
-      "visibility": "public",
-      "thumbnail": "assets/images/project-climatica.svg",
-      "alt": "Ilustración de Ocarina Climática: sol, nube y lluvia sobre el horizonte"
-    },
-    {
-      "id": "oca-soft-003",
-      "title": "Ocarina Wild",
-      "type": "proyecto",
-      "categories": [
-        "tecnologia",
-        "territorio"
-      ],
-      "summary": "Un archivo educativo para conocer y reconocer la naturaleza cercana: fauna, flora y ambientes de San Patricio del Chañar y la Patagonia. Pensado para aprender a observar, identificar y valorar la vida que tenemos alrededor.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-WILD",
-      "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-WILD/",
-      "tags": [
-        "naturaleza",
-        "fauna",
-        "flora"
-      ],
-      "author": "Ocarina Producciones",
-      "status": "published",
-      "visibility": "public",
-      "thumbnail": "assets/images/project-wild.svg",
-      "alt": "Ilustración botánica de Ocarina Wild"
-    },
-    {
-      "id": "oca-soft-005",
-      "title": "Ocarina TV",
-      "type": "proyecto",
-      "categories": [
-        "tecnologia",
-        "audiovisual"
-      ],
-      "summary": "Una puerta audiovisual digital para reunir producciones, registros e historias en formato de video. El repositorio permite seguir la construcción del proyecto; las piezas se irán incorporando al catálogo cuando estén listas para publicarse.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-TV",
-      "tags": [
-        "audiovisual",
-        "televisión web"
-      ],
-      "author": "Ocarina Producciones",
-      "status": "published",
-      "visibility": "public",
-      "thumbnail": "assets/images/project-tv.svg",
-      "alt": "Ilustración de una pantalla de Ocarina TV"
-    },
-    {
-      "id": "oca-soft-006",
-      "title": "Chañar Hub",
-      "type": "proyecto",
-      "categories": [
-        "tecnologia",
-        "territorio"
-      ],
-      "summary": "Un punto de encuentro digital para conectar proyectos, recursos e iniciativas vinculadas con San Patricio del Chañar. Una base para ordenar accesos y hacer más fácil encontrar lo que existe en el territorio.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/chanar-hub",
-      "tags": [
-        "portal",
-        "territorio",
-        "Chañar"
-      ],
-      "author": "Ocarina Producciones",
-      "status": "published",
-      "visibility": "public",
-      "thumbnail": "assets/images/project-hub.svg",
-      "alt": "Ilustración de nodos conectados de Chañar Hub"
     }
   ]
 }
