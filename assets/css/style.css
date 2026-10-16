@@ -269,3 +269,69 @@ h1 em,h2 em{font-style:italic;color:#a4472d}
 .door-e:after{content:"";position:absolute;right:0;bottom:0;width:100%;height:35%;background:repeating-linear-gradient(165deg,transparent 0 15px,#c9d8a408 16px 17px);opacity:.9}
 @media(max-width:720px){.door{min-height:235px}.door-c:before{right:-48px}.door-c:after{right:8px}.door-a:before{right:-58px}}
 @media(max-width:380px){.door,.door:nth-child(4),.door:last-child{min-height:205px}}
+
+
+/* 2026-10-16 · edición compacta: una portada y cinco puertas con todo el contenido dentro */
+.compact-hero{min-height:390px;padding-top:46px;padding-bottom:18px}
+.compact-hero .eyebrow{margin-top:22px;font-size:10px}
+.compact-hero h1{font-size:clamp(43px,6.5vw,76px);line-height:.94}
+.compact-hero .hero-copy{font-size:13px;line-height:1.65;max-width:520px;margin:16px 0 18px}
+.compact-hero .primary-link{padding:11px 14px;gap:24px}
+.compact-hero .hero-foot{padding-top:25px}
+.compact-explore{padding-top:48px;padding-bottom:48px}
+.compact-explore .section-heading{margin-bottom:22px}
+.compact-explore .section-heading h2{font-size:clamp(30px,4vw,46px)}
+.compact-explore .search-box{margin-bottom:18px}
+.compact-explore .search-control input{padding:11px 0}
+.compact-explore .doors-grid{gap:11px}
+.compact-explore .door{min-height:205px;padding:17px}
+.compact-explore .door-icon{margin:16px 0 12px;font-size:28px}
+.compact-explore .door strong{font-size:17px}
+.compact-explore .door-desc{font-size:11px;line-height:1.5}
+.compact-explore .door-bottom{padding-top:17px}
+.compact-explore .collection-panel,.compact-explore .results-panel{margin-top:15px;padding:clamp(15px,3vw,28px)}
+.compact-explore .collection-panel>.eyebrow{margin-top:22px}
+.compact-explore .results-list{margin-top:14px}
+.compact-explore .result-item{padding:13px;gap:10px}
+.compact-explore .result-copy{flex:1 1 100%}
+.catalog-photo{margin:6px 0 0;max-width:100%;overflow:hidden;border-radius:5px;background:#0d0f0c}
+.catalog-photo img{display:block;width:100%;max-height:540px;object-fit:contain;aspect-ratio:auto}
+.catalog-photo figcaption{padding:8px 10px;color:var(--muted);font-size:10px}
+.catalog-video{width:100%;max-width:900px;flex-basis:100%;aspect-ratio:16/9}
+.catalog-video iframe{display:block}
+.catalog-audio{width:100%;flex-basis:100%}
+.result-actions:empty{display:none}
+.compact-closing{padding:36px 0 30px;min-height:0}
+.compact-closing .closing-content{width:min(var(--max),calc(100% - 56px));margin:auto}
+.compact-closing h2{max-width:850px;font-size:clamp(28px,4vw,46px);line-height:1.02;margin-bottom:12px}
+.compact-closing .closing-content>p:not(.eyebrow){max-width:550px;font-size:12px;margin-bottom:14px}
+.compact-closing .closing-socials{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px}
+.compact-closing .closing-socials a{display:inline-flex;gap:7px;align-items:center;border:1px solid var(--line);padding:7px 9px;border-radius:3px;font-size:10px}
+.compact-closing .closing-socials a span{color:var(--muted);font-size:9px}
+.compact-footer{padding-top:18px;padding-bottom:16px}
+.compact-footer .mark{width:30px;height:30px;font-size:16px}
+.compact-footer .wordmark{font-size:10px}
+.compact-footer .wordmark small{font-size:8px}
+.compact-footer>p{font-size:9px}
+@media(max-width:720px){
+ .compact-hero{min-height:365px;padding:35px 22px 16px}
+ .compact-hero .hero-foot{padding-top:22px;letter-spacing:.06em}
+ .compact-explore{padding-top:36px;padding-bottom:36px}
+ .compact-explore .doors-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .compact-explore .door,.compact-explore .door:nth-child(4){grid-column:auto;min-height:190px;padding:13px}
+ .compact-explore .door:last-child{grid-column:1/-1;min-height:160px}
+ .compact-explore .door strong{font-size:15px}
+ .compact-explore .door-icon{margin:12px 0 10px}
+ .compact-closing{padding:28px 0 22px}
+ .compact-closing .closing-content{width:calc(100% - 40px)}
+ .compact-closing .closing-socials{gap:7px}
+ .compact-closing .closing-socials a{font-size:9px}
+ .compact-closing .closing-socials a span{font-size:8px}
+}
+@media(max-width:380px){
+ .compact-hero h1{font-size:39px}
+ .compact-explore .doors-grid{grid-template-columns:1fr}
+ .compact-explore .door,.compact-explore .door:nth-child(4),.compact-explore .door:last-child{grid-column:auto;min-height:165px}
+ .compact-explore .door-icon{margin:10px 0 8px}
+ .compact-explore .door-bottom{padding-top:12px}
+}
