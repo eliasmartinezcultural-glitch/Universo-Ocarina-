@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "Universo Ocarina",
+    "description": "Archivo vivo de creación, comunicación, tecnología y territorio.",
+    "maintainer": "Elías Martínez",
+    "last_reviewed": "2026-10-16"
+  },
+  "categories": [
+    {
+      "id": "audiovisual",
+      "number": "01 / IMAGEN",
+      "title": "Audiovisual",
+      "description": "Documentales, videos, entrevistas, cortometrajes y fotografía en movimiento."
+    },
+    {
+      "id": "radio",
+      "number": "02 / SONIDO",
+      "title": "Radio y sonido",
+      "description": "Radio online, programas, entrevistas, archivos de audio y producciones sonoras."
+    },
+    {
+      "id": "tecnologia",
+      "number": "03 / CÓDIGO",
+      "title": "Tecnología y proyectos digitales",
+      "description": "Páginas web, aplicaciones, videojuegos, mapas interactivos y herramientas digitales."
+    },
+    {
+      "id": "escritos",
+      "number": "04 / IDEAS",
+      "title": "Escritos e investigaciones",
+      "description": "Textos, documentos, informes, ensayos, investigaciones y proyectos escritos."
+    },
+    {
+      "id": "territorio",
+      "number": "05 / MEMORIA",
+      "title": "Cultura, territorio y memoria",
+      "description": "Historias locales, personas, lugares, patrimonio, fotografías y memoria regional."
+    }
+  ],
+  "items": []
+}
