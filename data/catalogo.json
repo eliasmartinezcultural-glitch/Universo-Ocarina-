@@ -11,127 +11,137 @@
       "id": "audiovisual",
       "number": "01 / IMAGEN",
       "title": "Audiovisual",
-      "description": "Documentales, videos, entrevistas, cortometrajes y fotografía en movimiento.",
+      "description": "Cine de cercanía, documentales, entrevistas y registros visuales. Una sala para mirar historias del territorio y trabajos audiovisuales de Ocarina.",
       "features": [
         {
-          "eyebrow": "SALA DE REPRODUCCIÓN",
-          "title": "Videos dentro del universo",
-          "text": "Reproductor integrado para registros de YouTube y archivos de video directos."
+          "eyebrow": "SALA DE CINE",
+          "title": "Reproducción integrada",
+          "text": "Los videos se abren dentro de la puerta, sin obligar a abandonar el universo."
         },
         {
-          "eyebrow": "ARCHIVO VISUAL",
-          "title": "Documentales y registros",
-          "text": "Cada pieza conserva su título, descripción y procedencia cuando esos datos están disponibles."
+          "eyebrow": "REGISTRO Y DOCUMENTAL",
+          "title": "Historias en imágenes",
+          "text": "Cada pieza llevará su título confirmado, contexto y procedencia cuando estén disponibles."
         },
         {
-          "eyebrow": "FOTOGRAFÍA",
-          "title": "Imágenes en contexto",
-          "text": "Galería integrada para fotografías y materiales visuales del territorio."
+          "eyebrow": "FOTOTECA",
+          "title": "Imágenes con memoria",
+          "text": "Una futura galería reunirá fotografías propias y materiales autorizados, con sus créditos."
         }
-      ]
+      ],
+      "cover": "assets/images/door-audiovisual.svg",
+      "cover_alt": "Ilustración conceptual de Audiovisual"
     },
     {
       "id": "radio",
       "number": "02 / SONIDO",
       "title": "Radio y sonido",
-      "description": "Radio online, programas, entrevistas, archivos de audio y producciones sonoras.",
+      "description": "Una cabina digital: señal online, programas, voces y archivo sonoro. Escuchá desde la página y explorá cómo suena el territorio.",
       "features": [
         {
-          "eyebrow": "AL AIRE",
-          "title": "Escucha integrada",
-          "text": "Reproductor de señal dentro de la página, con estado de conexión y alternativa para abrir el stream."
+          "eyebrow": "ESTUDIO DIGITAL",
+          "title": "La cabina de Ocarina",
+          "text": "Una interfaz inspirada en consolas, medidores, señal analógica y estudios de radio."
         },
         {
-          "eyebrow": "ARCHIVO SONORO",
-          "title": "Voces y producciones",
-          "text": "Espacio para entrevistas, programas, separadores y paisajes sonoros."
+          "eyebrow": "SEÑAL ONLINE",
+          "title": "Escuchar desde acá",
+          "text": "El reproductor queda integrado. Si la señal falla, habrá un aviso y una alternativa de escucha."
         },
         {
-          "eyebrow": "PROGRAMACIÓN",
-          "title": "Una radio con identidad",
-          "text": "La grilla se incorporará con horarios confirmados, sin inventar emisiones ni frecuencias."
+          "eyebrow": "FONOTECA",
+          "title": "Voces, programas y ambientes",
+          "text": "Archivo para entrevistas, programas y producciones sonoras; la programación se publicará con datos confirmados."
         }
-      ]
+      ],
+      "cover": "assets/images/door-radio.svg",
+      "cover_alt": "Ilustración conceptual de Radio y sonido"
     },
     {
       "id": "tecnologia",
       "number": "03 / CÓDIGO",
       "title": "Tecnología y proyectos digitales",
-      "description": "Páginas web, aplicaciones, videojuegos, mapas interactivos y herramientas digitales.",
+      "description": "Laboratorio digital de Ocarina: herramientas, experiencias y proyectos nacidos de preguntas concretas. Por ahora, cuatro proyectos seleccionados: clima, naturaleza, un portal territorial y televisión web.",
       "features": [
         {
-          "eyebrow": "PROYECTOS PUBLICADOS",
-          "title": "Entrar y probar",
-          "text": "Accesos directos a sitios y experiencias que ya pueden visitarse."
+          "eyebrow": "LABORATORIO",
+          "title": "Proyectos seleccionados",
+          "text": "Cuatro desarrollos conectados por una misma raíz territorial y una estética futurista propia."
         },
         {
-          "eyebrow": "CÓDIGO Y REPOSITORIOS",
-          "title": "Cómo se construyen",
-          "text": "Cada ficha puede abrir el repositorio público para consultar archivos, documentación y avances."
+          "eyebrow": "PROBAR Y EXPLORAR",
+          "title": "Sitios y experiencias",
+          "text": "Cuando hay una versión publicada, se ofrece el acceso directo; también se enlaza el repositorio."
         },
         {
-          "eyebrow": "MUNDOS DIGITALES",
-          "title": "Juegos y herramientas",
-          "text": "Videojuegos, portales y utilidades con una estética propia, futurista y experimental."
+          "eyebrow": "CÓDIGO ABIERTO",
+          "title": "Detrás de cada proyecto",
+          "text": "Acceso a los repositorios para revisar archivos, estructura y evolución de cada herramienta."
         }
-      ]
+      ],
+      "cover": "assets/images/door-software.svg",
+      "cover_alt": "Ilustración conceptual de Tecnología y proyectos digitales"
     },
     {
       "id": "escritos",
       "number": "04 / IDEAS",
       "title": "Escritos e investigaciones",
-      "description": "Textos, documentos, informes, ensayos, investigaciones y proyectos escritos.",
+      "description": "Cuaderno de investigación y edición: documentos, crónicas, ideas y preguntas trabajadas con contexto y fuentes. Los datos, testimonios e hipótesis deben distinguirse con claridad.",
       "features": [
         {
-          "eyebrow": "INVESTIGACIÓN",
-          "title": "Preguntas con fuentes",
-          "text": "Materiales organizados para diferenciar datos, documentos, testimonios e hipótesis."
+          "eyebrow": "MESA DE INVESTIGACIÓN",
+          "title": "Fuentes antes que conclusiones",
+          "text": "Materiales organizados para separar datos verificables, documentos, testimonios e hipótesis."
         },
         {
           "eyebrow": "CUADERNO EDITORIAL",
-          "title": "Textos y documentos",
-          "text": "Informes, ensayos, crónicas y publicaciones que se puedan leer desde la página."
+          "title": "Leer con contexto",
+          "text": "Crónicas, ensayos e informes con títulos claros, fecha y referencias cuando correspondan."
         },
         {
           "eyebrow": "BITÁCORA",
           "title": "Proceso y versiones",
-          "text": "Cada investigación puede conservar referencias, fecha de revisión y estado del trabajo."
+          "text": "Un espacio para registrar preguntas, cambios, pendientes y revisiones sin confundir borradores con hechos."
         }
-      ]
+      ],
+      "cover": "assets/images/door-escritos.svg",
+      "cover_alt": "Ilustración conceptual de Escritos e investigaciones"
     },
     {
       "id": "territorio",
       "number": "05 / MEMORIA",
       "title": "Cultura, territorio y memoria",
-      "description": "Historias locales, personas, lugares, patrimonio, fotografías y memoria regional.",
+      "description": "Un archivo vivo de San Patricio del Chañar y su entorno: personas, memoria, naturaleza, cultura y lugares. Historias contadas desde el territorio, sin convertirlo en un decorado.",
       "features": [
         {
-          "eyebrow": "MEMORIA LOCAL",
-          "title": "San Patricio del Chañar",
-          "text": "Historias, lugares y personas contados desde el territorio."
+          "eyebrow": "MEMORIA DEL CHAÑAR",
+          "title": "Historias desde el lugar",
+          "text": "Personas, oficios, barrios, parajes y experiencias cotidianas de San Patricio del Chañar."
         },
         {
-          "eyebrow": "NATURALEZA",
-          "title": "Reconocer para cuidar",
-          "text": "Fauna, flora y paisaje con información clara y fuentes identificables."
+          "eyebrow": "NATURALEZA PATAGÓNICA",
+          "title": "Conocer para cuidar",
+          "text": "Paisajes, fauna y flora con información clara, fotografías reales y fuentes identificables."
         },
         {
           "eyebrow": "PATRIMONIO VIVO",
           "title": "Lo que merece permanecer",
-          "text": "Fotografías, voces, costumbres y archivos que conectan generaciones."
+          "text": "Voces, imágenes, costumbres y lugares que ayudan a comprender la identidad local."
         }
-      ]
+      ],
+      "cover": "assets/images/door-territorio.svg",
+      "cover_alt": "Ilustración conceptual de Cultura, territorio y memoria"
     }
   ],
   "items": [
     {
       "id": "oca-rs-001",
-      "title": "COLONIA RADIANTE",
+      "title": "Colonia Radiante",
       "type": "radio",
       "categories": [
         "radio"
       ],
-      "summary": "Radio online de Ocarina Producciones. Señal de audio para escuchar desde el catálogo.",
+      "summary": "Señal online de Ocarina Producciones. Reproducí la emisión desde esta cabina digital; la disponibilidad depende del servicio de streaming.",
       "url": "https://stream.zeno.fm/amfjjcz4tlgtv",
       "stream_url": "https://stream.zeno.fm/amfjjcz4tlgtv",
       "author": "Ocarina Producciones",
@@ -150,7 +160,7 @@
       "categories": [
         "audiovisual"
       ],
-      "summary": "Video incorporado desde el archivo de A Chañarense Suelto. El título original queda pendiente de confirmar.",
+      "summary": "Video incorporado desde el archivo de A Chañarense Suelto. El título original queda pendiente de confirmar; se conserva el registro sin inventar su nombre.",
       "url": "https://www.youtube.com/watch?v=TJ6ebkYpm_k",
       "tags": [
         "youtube",
@@ -167,7 +177,7 @@
       "categories": [
         "audiovisual"
       ],
-      "summary": "Video incorporado desde el archivo de A Chañarense Suelto. El título original queda pendiente de confirmar.",
+      "summary": "Video incorporado desde el archivo de A Chañarense Suelto. El título original queda pendiente de confirmar; se conserva el registro sin inventar su nombre.",
       "url": "https://www.youtube.com/watch?v=ruDP0Ur2wZ0",
       "tags": [
         "youtube",
@@ -178,25 +188,6 @@
       "thumbnail": "https://img.youtube.com/vi/ruDP0Ur2wZ0/hqdefault.jpg"
     },
     {
-      "id": "oca-soft-001",
-      "title": "Villa Pelón — El juego de Ocarina",
-      "type": "proyecto",
-      "categories": [
-        "tecnologia"
-      ],
-      "summary": "Experiencia de juego web ambientada en Villa Pelón. Proyecto público con versión navegable.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/Villa-Pelon---El-juego-de-Ocarina-",
-      "site_url": "https://eliasmartinezcultural-glitch.github.io/VILLA-PELON/",
-      "tags": [
-        "videojuego",
-        "juego web",
-        "Villa Pelón"
-      ],
-      "author": "Ocarina Producciones",
-      "status": "published",
-      "visibility": "public"
-    },
-    {
       "id": "oca-soft-002",
       "title": "Ocarina Climática",
       "type": "proyecto",
@@ -204,7 +195,7 @@
         "tecnologia",
         "territorio"
       ],
-      "summary": "Proyecto de información meteorológica y clima con foco en San Patricio del Chañar.",
+      "summary": "Una herramienta digital dedicada al tiempo y al clima de San Patricio del Chañar. Reúne la información meteorológica y abre camino a explorar el comportamiento del clima local, con foco en el territorio y en el acceso sencillo a los datos.",
       "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-CLIMATICA",
       "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-CLIMATICA/",
       "tags": [
@@ -214,7 +205,9 @@
       ],
       "author": "Ocarina Producciones",
       "status": "published",
-      "visibility": "public"
+      "visibility": "public",
+      "thumbnail": "assets/images/project-climatica.svg",
+      "alt": "Ilustración de Ocarina Climática: sol, nube y lluvia sobre el horizonte"
     },
     {
       "id": "oca-soft-003",
@@ -224,7 +217,7 @@
         "tecnologia",
         "territorio"
       ],
-      "summary": "Archivo educativo para conocer y reconocer la naturaleza del territorio.",
+      "summary": "Un archivo educativo para conocer y reconocer la naturaleza cercana: fauna, flora y ambientes de San Patricio del Chañar y la Patagonia. Pensado para aprender a observar, identificar y valorar la vida que tenemos alrededor.",
       "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-WILD",
       "site_url": "https://eliasmartinezcultural-glitch.github.io/OCARINA-WILD/",
       "tags": [
@@ -234,27 +227,9 @@
       ],
       "author": "Ocarina Producciones",
       "status": "published",
-      "visibility": "public"
-    },
-    {
-      "id": "oca-soft-004",
-      "title": "Protocolo Fantasma",
-      "type": "proyecto",
-      "categories": [
-        "tecnologia",
-        "escritos"
-      ],
-      "summary": "Espacio de análisis, documentos y seguimiento de asuntos públicos locales.",
-      "url": "https://github.com/eliasmartinezcultural-glitch/PROTOCOLO-FANTASMA-",
-      "site_url": "https://eliasmartinezcultural-glitch.github.io/PROTOCOLO-FANTASMA-/",
-      "tags": [
-        "investigación",
-        "documentos",
-        "Chañar"
-      ],
-      "author": "Ocarina Producciones",
-      "status": "published",
-      "visibility": "public"
+      "visibility": "public",
+      "thumbnail": "assets/images/project-wild.svg",
+      "alt": "Ilustración botánica de Ocarina Wild"
     },
     {
       "id": "oca-soft-005",
@@ -264,7 +239,7 @@
         "tecnologia",
         "audiovisual"
       ],
-      "summary": "Proyecto audiovisual digital de Ocarina. El repositorio permite consultar su estructura y evolución.",
+      "summary": "Una puerta audiovisual digital para reunir producciones, registros e historias en formato de video. El repositorio permite seguir la construcción del proyecto; las piezas se irán incorporando al catálogo cuando estén listas para publicarse.",
       "url": "https://github.com/eliasmartinezcultural-glitch/OCARINA-TV",
       "tags": [
         "audiovisual",
@@ -272,7 +247,9 @@
       ],
       "author": "Ocarina Producciones",
       "status": "published",
-      "visibility": "public"
+      "visibility": "public",
+      "thumbnail": "assets/images/project-tv.svg",
+      "alt": "Ilustración de una pantalla de Ocarina TV"
     },
     {
       "id": "oca-soft-006",
@@ -282,7 +259,7 @@
         "tecnologia",
         "territorio"
       ],
-      "summary": "Portal de proyectos y recursos relacionados con San Patricio del Chañar.",
+      "summary": "Un punto de encuentro digital para conectar proyectos, recursos e iniciativas vinculadas con San Patricio del Chañar. Una base para ordenar accesos y hacer más fácil encontrar lo que existe en el territorio.",
       "url": "https://github.com/eliasmartinezcultural-glitch/chanar-hub",
       "tags": [
         "portal",
@@ -291,7 +268,9 @@
       ],
       "author": "Ocarina Producciones",
       "status": "published",
-      "visibility": "public"
+      "visibility": "public",
+      "thumbnail": "assets/images/project-hub.svg",
+      "alt": "Ilustración de nodos conectados de Chañar Hub"
     }
   ]
 }
