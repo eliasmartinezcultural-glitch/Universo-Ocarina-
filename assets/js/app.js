@@ -14,6 +14,8 @@
   const doors = $("doorsGrid");
   const collectionPanel = $("collectionPanel");
   const collectionFeatures = $("collectionFeatures");
+  const collectionArtwork = $("collectionArtwork");
+  const collectionArtworkImage = $("collectionArtworkImage");
   const resultsPanel = $("resultsPanel");
   const searchInput = $("searchInput");
   const clearSearch = $("clearSearch");
@@ -64,7 +66,9 @@
     const siteUrl = /^https?:\/\//i.test(String(item.site_url || "")) ? String(item.site_url) : "";
 
     if (item.type === "proyecto") {
-      media = '<div class="project-card-meta"><span>PROYECTO DIGITAL</span><span>ARCHIVO OCARINA</span></div>';
+      const imagePath = String(item.thumbnail || "");
+      const safeImage = /^(?:https?:\/\/|assets\/images\/)[\w./?&=#%-]+$/i.test(imagePath) ? imagePath : "";
+      media = (safeImage ? '<figure class="project-art"><img src="' + escapeHtml(safeImage) + '" alt="' + escapeHtml(item.alt || item.title || "Ilustración del proyecto") + '" loading="lazy"></figure>' : "") + '<div class="project-card-meta"><span>PROYECTO DIGITAL</span><span>ARCHIVO OCARINA</span></div>';
       const links = [];
       if (siteUrl) links.push('<a href="' + escapeHtml(siteUrl) + '" target="_blank" rel="noopener noreferrer">Abrir sitio ↗</a>');
       if (safeHref) links.push('<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Ver repositorio ↗</a>');
@@ -112,6 +116,20 @@
     });
   }
 
+  function renderCollectionArtwork(category) {
+    if (!collectionArtwork || !collectionArtworkImage) return;
+    const cover = String(category.cover || "");
+    const safeCover = /^(?:https?:\/\/|assets\/images\/)[\w./?&=#%-]+$/i.test(cover) ? cover : "";
+    collectionArtwork.hidden = !safeCover;
+    if (safeCover) {
+      collectionArtworkImage.src = safeCover;
+      collectionArtworkImage.alt = String(category.cover_alt || ("Ilustración de " + (category.title || "esta puerta")));
+    } else {
+      collectionArtworkImage.removeAttribute("src");
+      collectionArtworkImage.alt = "";
+    }
+  }
+
   function renderCollectionFeatures(category) {
     if (!collectionFeatures) return;
     const features = Array.isArray(category.features) ? category.features : [];
@@ -130,6 +148,8 @@
     $("collectionNumber").textContent = category.number || "";
     $("collectionTitle").textContent = category.title || "Colección";
     $("collectionDescription").textContent = category.description || "";
+    collectionPanel.dataset.category = id;
+    renderCollectionArtwork(category);
     renderCollectionFeatures(category);
     const items = publicItems().filter(item => itemCategories(item).includes(id));
     $("collectionCount").textContent = items.length + (items.length === 1 ? " obra publicada" : " obras publicadas");
