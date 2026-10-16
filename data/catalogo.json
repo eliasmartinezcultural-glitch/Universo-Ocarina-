@@ -38,5 +38,25 @@
       "description": "Historias locales, personas, lugares, patrimonio, fotografías y memoria regional."
     }
   ],
-  "items": []
+  "items": [
+    {
+      "id": "oca-rs-001",
+      "title": "COLONIA RADIANTE",
+      "type": "radio",
+      "categories": [
+        "radio"
+      ],
+      "summary": "Radio online de Ocarina Producciones. Señal de audio para escuchar desde el catálogo.",
+      "url": "https://stream.zeno.fm/amfjjcz4tlgtv",
+      "stream_url": "https://stream.zeno.fm/amfjjcz4tlgtv",
+      "author": "Ocarina Producciones",
+      "tags": [
+        "radio online",
+        "COLONIA RADIANTE",
+        "Ocarina Producciones"
+      ],
+      "status": "published",
+      "visibility": "public"
+    }
+  ]
 }
