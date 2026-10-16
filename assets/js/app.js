@@ -112,6 +112,9 @@
   }
 
   function showDoors() {
+    // Volver al inicio del catálogo también limpia la búsqueda para evitar una interfaz contradictoria.
+    if (searchInput && searchInput.value) searchInput.value = "";
+    if (typeof searchCatalog === "function") searchCatalog("");
     if (collectionPanel) collectionPanel.hidden = true;
     if (resultsPanel) resultsPanel.hidden = true;
     if (doors) doors.hidden = false;
