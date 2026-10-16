@@ -67,10 +67,29 @@
       action = '<a href="' + escapeHtml(safeHref) + '" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>';
     } else if (item.type === "radio" && /^https?:\/\//i.test(String(item.stream_url || ""))) {
       const streamUrl = escapeHtml(String(item.stream_url));
-      media = '<div class="catalog-media catalog-audio"><p>TRANSMISIÓN EN VIVO</p><audio controls preload="none" src="' + streamUrl + '">Tu navegador no puede reproducir este audio.</audio></div>';
+      media = '<div class="catalog-media catalog-audio"><p>TRANSMISIÓN EN VIVO</p><audio controls preload="none" src="' + streamUrl + '">Tu navegador no puede reproducir este audio.</audio><p class="audio-status" aria-live="polite" data-state="idle">Lista para reproducir. Pulsá el botón de reproducción.</p></div>';
       action = '<a href="' + streamUrl + '" target="_blank" rel="noopener noreferrer">Abrir señal ↗</a>';
     }
     return '<article class="result-item"><div class="result-copy"><strong>' + title + '</strong><p>' + category + (description ? " · " + description : "") + '</p></div>' + media + '<div class="result-actions">' + action + '</div></article>';
+  }
+
+  function wireMediaStatus(root) {
+    if (!root) return;
+    root.querySelectorAll(".catalog-audio audio").forEach(audio => {
+      const status = audio.closest(".catalog-audio")?.querySelector(".audio-status");
+      if (!status || audio.dataset.statusBound === "true") return;
+      audio.dataset.statusBound = "true";
+      audio.addEventListener("playing", () => { status.textContent = "La señal está reproduciendo."; status.dataset.state = "playing"; });
+      audio.addEventListener("waiting", () => { status.textContent = "Conectando con la señal…"; status.dataset.state = "waiting"; });
+      audio.addEventListener("stalled", () => { status.textContent = "La señal dejó de enviar datos. Esperá unos segundos o volvé a reproducir."; status.dataset.state = "warning"; });
+      audio.addEventListener("error", () => {
+        status.textContent = "No se pudo reproducir la señal desde este navegador. Probá «Abrir señal» o volvé a intentarlo más tarde.";
+        status.dataset.state = "error";
+      });
+      audio.addEventListener("pause", () => {
+        if (!audio.error && !audio.ended) { status.textContent = "Reproducción pausada."; status.dataset.state = "idle"; }
+      });
+    });
   }
 
   function openCollection(id, updateUrl = true) {
@@ -85,6 +104,7 @@
     const items = publicItems().filter(item => itemCategories(item).includes(id));
     $("collectionCount").textContent = items.length + (items.length === 1 ? " obra publicada" : " obras publicadas");
     $("collectionItems").innerHTML = items.map(itemCard).join("");
+    wireMediaStatus($("collectionItems"));
     $("emptyState").hidden = items.length > 0;
     if (updateUrl) safeHash("#coleccion-" + id);
     $("collectionTitle").focus?.({preventScroll:true});
@@ -124,6 +144,7 @@
       ? results.length + (results.length === 1 ? " coincidencia encontrada." : " coincidencias encontradas.")
       : "No encontramos obras publicadas con esa búsqueda. Probá otra palabra.";
     $("resultsList").innerHTML = results.map(itemCard).join("");
+    wireMediaStatus($("resultsList"));
     searchHint.textContent = "Buscando en el contenido público disponible.";
   }
 
