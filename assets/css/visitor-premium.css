@@ -1,0 +1,79 @@
+/* UNIVERSO OCARINA · dirección de arte visitante 2026 */
+:root{--max:1320px;--bg:#0b0d0a;--acid:#e0f58b}
+.site-header{padding-inline:max(22px,calc((100vw - 1320px)/2));border-bottom-color:#dceca51f}
+.wordmark .mark{width:40px;height:40px;border-radius:3px;border-color:#dceca5;color:#dceca5;font-size:22px;box-shadow:inset 0 0 0 4px #dceca50b}
+.hero.compact-hero{min-height:560px;padding-top:80px;background:linear-gradient(90deg,#0b0d0a 0%,#0b0d0af0 34%,#0b0d0a44 100%),radial-gradient(ellipse at 78% 35%,#b1c8751b,transparent 45%),linear-gradient(135deg,#181b13,#10120e);border-bottom:1px solid #b8c98b38}
+.hero-landscape{position:absolute;inset:0 0 0 30%;opacity:.85;pointer-events:none;mask-image:linear-gradient(90deg,transparent,#000 25%)}
+.hero:after{content:"";right:4%;top:9%;width:min(49vw,620px);height:75%;background:url("../images/door-territorio.svg") center/cover no-repeat;opacity:.12;mix-blend-mode:screen;font-size:0}
+.hero-content{max-width:790px;z-index:2}
+.hero .eyebrow{margin-top:34px;color:#e0d8b9}
+.hero h1{font-size:clamp(58px,8vw,112px);max-width:850px;line-height:.9;letter-spacing:-.075em;text-wrap:balance}
+.hero h1 em,.section-heading h2 em,.compact-closing h2 em{color:#dbe99b}
+.hero-copy{font-size:clamp(14px,1.3vw,17px);max-width:510px;color:#d0d0c3;line-height:1.85}
+.primary-link{padding:15px 19px;border-radius:2px;box-shadow:0 12px 34px #d8f47715;text-transform:uppercase;letter-spacing:.07em;font-size:10px}
+.hero-stamp{position:absolute;right:max(22px,calc((100vw - 1320px)/2 + 18px));top:112px;width:clamp(170px,20vw,270px);aspect-ratio:1;border:1px solid #d7e8a23d;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#dceca5;transform:rotate(9deg);z-index:1;background:#0b0d0a38;box-shadow:inset 0 0 0 12px #d7e8a208,inset 0 0 0 13px #d7e8a21b}
+.stamp-orbit{position:absolute;inset:12%;border:1px dashed #d7e8a250;border-radius:50%}
+.stamp-number{font-size:clamp(65px,8vw,112px);font-weight:800;letter-spacing:-.12em;line-height:.85}
+.stamp-label{font:700 10px/1.5 ui-monospace,monospace;letter-spacing:.24em;text-align:center;margin-top:13px}
+.stamp-coordinate{position:absolute;bottom:13%;font:8px ui-monospace,monospace;letter-spacing:.12em;color:#aeb995}
+.hero-foot{position:relative;z-index:2;border-top:1px solid #ffffff14;padding-top:17px!important;color:#9c9f8b!important}
+.compact-explore{padding-top:68px;padding-bottom:74px}
+.section-heading{margin-bottom:30px}
+.section-heading h2{font-size:clamp(36px,5vw,62px);letter-spacing:-.07em}
+.section-note{max-width:330px;line-height:1.8}
+.search-box{max-width:720px;margin-bottom:34px}
+.search-control{border-radius:2px;border-color:#4a4d3c;background:linear-gradient(100deg,#171a13,#10120f);padding-inline:16px}
+.search-control input{padding-block:17px}
+.search-control>span{color:#dceca5}
+.doors-grid{gap:14px}
+.door,.door:nth-child(4){min-height:292px;padding:23px;grid-column:span 2;border-radius:2px;background-position:center;background-size:cover;box-shadow:0 14px 36px #0002;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,filter .3s}
+.door:nth-child(4){grid-column:2/span 2}
+.door:after{content:"";position:absolute;inset:8px;border:1px solid #ffffff18;pointer-events:none;z-index:0}
+.door:before{width:210px;height:210px;right:-90px;top:25px;opacity:.18;transition:transform .45s}
+.door:hover{transform:translateY(-6px);filter:brightness(1.12)}
+.door:hover:before{transform:scale(1.16)}
+.door-number{font-size:9px;letter-spacing:.18em}
+.door-icon{font-size:35px;margin:28px 0 18px}
+.door strong{font-size:clamp(18px,2vw,24px);max-width:300px;letter-spacing:-.05em}
+.door-desc{font-size:12px;max-width:260px;line-height:1.7}
+.door-bottom{border-top:1px solid #ffffff24;padding-top:16px;margin-top:25px}
+.door-a{background-image:linear-gradient(180deg,#26150bb5,#24170df2 85%),url("../images/door-audiovisual.svg")}
+.door-b{background-image:linear-gradient(180deg,#0c180bc0,#11180ef2 85%),url("../images/door-radio.svg")}
+.door-c{background-image:linear-gradient(180deg,#071c2acc,#071421f4 85%),url("../images/door-software.svg")}
+.door-d{background-image:linear-gradient(180deg,#291d17b0,#261b15f2 85%),url("../images/door-escritos.svg")}
+.door-e{background-image:linear-gradient(180deg,#192515b5,#172117f2 85%),url("../images/door-territorio.svg")}
+.collection-panel{border-radius:2px;padding:clamp(20px,4vw,52px);box-shadow:0 24px 80px #0003}
+.collection-panel>.eyebrow{letter-spacing:.18em}
+.collection-panel h3{font-size:clamp(38px,6vw,72px);letter-spacing:-.07em;max-width:900px}
+.collection-description{font-size:14px;line-height:1.9;max-width:760px}
+.collection-artwork{margin:30px 0 15px;border:1px solid var(--line)}
+.collection-artwork img{max-height:360px;aspect-ratio:16/5}
+.collection-feature{padding:22px;min-height:150px;backdrop-filter:blur(8px)}
+.collection-feature>span{letter-spacing:.17em}
+.collection-feature strong{font-size:17px;letter-spacing:-.025em}
+.collection-feature p{font-size:12px;line-height:1.8}
+.collection-meta{letter-spacing:.12em;padding-top:19px}
+.result-item{border-radius:2px;padding:22px;gap:18px}
+.result-item:has(.project-art){padding:20px;border-color:#39738a;background:linear-gradient(125deg,#0a1c28,#10191d 65%,#111713);position:relative;overflow:hidden}
+.result-item:has(.project-art):before{content:"OCARINA / LAB";position:absolute;top:14px;right:16px;font:8px ui-monospace,monospace;letter-spacing:.16em;color:#75e7ff70}
+.result-item:has(.project-art) .result-copy{padding:8px 0 0}
+.result-item:has(.project-art) .result-copy strong{font-size:clamp(20px,2.5vw,28px);letter-spacing:-.05em}
+.result-item:has(.project-art) .result-copy p{max-width:800px;font-size:12px;line-height:1.85}
+.project-art{max-width:none;margin-top:5px;border:1px solid #58d5ff3a;box-shadow:0 15px 38px #0003}
+.project-art img{aspect-ratio:16/5;object-fit:cover;transition:transform .5s}
+.result-item:has(.project-art):hover .project-art img{transform:scale(1.015)}
+.project-card-meta span{background:#071821;border-color:#75e7ff45;color:#a6efff;padding:8px 11px;letter-spacing:.14em}
+.result-item:has(.project-art) .result-actions{align-items:center;justify-content:flex-start;margin-top:4px}
+.result-item:has(.project-art) .result-actions a.project-visit{background:#83eaff;color:#06131a;border-color:#83eaff;font-weight:800;padding:13px 17px;letter-spacing:.1em}
+.result-item:has(.project-art) .result-actions a.project-visit span{font-size:15px;margin-left:12px}
+.project-coming{font:10px ui-monospace,monospace;letter-spacing:.1em;color:#b5c7ce;border:1px solid #55717a;padding:11px 13px}
+.empty-state{padding:52px 18px}
+.compact-closing{border-top:1px solid #d8f47724;background:linear-gradient(120deg,#151811,#0d0f0c)}
+.compact-closing .closing-content{padding-top:18px}
+.compact-closing h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.06em;line-height:.98}
+.compact-closing .closing-socials a{padding:10px 13px;border-radius:2px;border-color:#4b4f3d}
+.compact-footer{border-top:1px solid #ffffff0e}
+@media(max-width:900px){.hero-stamp{right:5%;top:120px;width:170px;opacity:.65}.hero-content{max-width:72%}.doors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.door,.door:nth-child(4){grid-column:auto}.door:last-child{grid-column:1/-1}}
+@media(max-width:720px){.hero.compact-hero{min-height:430px;padding-top:40px}.hero-stamp{width:100px;right:16px;top:82px;opacity:.38}.stamp-number{font-size:45px}.stamp-label{font-size:7px;margin-top:6px}.stamp-coordinate{font-size:5px}.hero-content{max-width:100%;padding-right:5px}.hero .eyebrow{margin-top:32px}.compact-hero h1{font-size:clamp(48px,12vw,74px);max-width:100%}.hero-copy{max-width:440px;font-size:13px}.hero-landscape{inset:0;opacity:.45}.hero-foot{gap:10px;flex-wrap:wrap}.hero-foot span:last-child{text-align:right}.compact-explore{padding-top:45px}.doors-grid{gap:9px}.door,.door:nth-child(4){min-height:230px;padding:16px}.door:last-child{grid-column:1/-1;min-height:190px}.door-icon{font-size:28px;margin:19px 0 14px}.door strong{font-size:17px}.collection-artwork img{aspect-ratio:16/8}.collection-feature{min-height:0;padding:16px}.result-item:has(.project-art){padding:15px}.project-art img{aspect-ratio:16/8}.result-item:has(.project-art) .result-copy strong{font-size:21px}.result-item:has(.project-art) .result-actions a.project-visit{width:100%;justify-content:space-between}}
+@media(max-width:380px){.hero-stamp{display:none}.compact-hero h1{font-size:44px}.door,.door:nth-child(4){min-height:210px;padding:13px}}
+@media(prefers-reduced-motion:reduce){.door,.project-art img{transition:none!important}}
