@@ -59,6 +59,7 @@
     const title = escapeHtml(item.title || "Obra sin título");
     const description = escapeHtml(item.summary || "");
     const category = escapeHtml(categoryName(itemCategories(item)[0]));
+    const author = item.author ? escapeHtml(item.author) : "";
     const href = String(item.url || "");
     const safeHref = /^https?:\/\//i.test(href) ? href : "";
     let media = "";
