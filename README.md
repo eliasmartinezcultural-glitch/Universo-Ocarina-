@@ -1,86 +1,59 @@
 # Universo Ocarina
 
-Archivo vivo de creación, comunicación, tecnología y territorio.
+**Cinco mundos. Un territorio.** Un espacio público de Ocarina Producciones para descubrir producciones audiovisuales, sonido, proyectos digitales, investigaciones y memoria territorial.
 
-## Estado actual
+Universo Ocarina nace en San Patricio del Chañar, Patagonia. Reúne cinco puertas temáticas bajo una identidad común y prioriza una experiencia sencilla, visual y adaptable a celulares, tabletas y computadoras.
 
-Primera base estructural. La portada contiene cinco puertas permanentes y un catálogo público inicialmente vacío. No se han incorporado obras reales en esta etapa.
+## Las cinco puertas
 
-## Las cinco categorías
+1. **Audiovisual** — videos, documentales, entrevistas y fotografía.
+2. **Radio y sonido** — señal online, programas y producciones sonoras.
+3. **Tecnología y proyectos digitales** — sitios, herramientas y experiencias interactivas.
+4. **Escritos e investigaciones** — documentos, crónicas, ideas e investigaciones.
+5. **Cultura, territorio y memoria** — personas, lugares, naturaleza, patrimonio e historias locales.
 
-1. **Audiovisual** — documentales, videos, entrevistas, cortometrajes y fotografía en movimiento.
-2. **Radio y sonido** — radio online, programas, entrevistas y producciones sonoras.
-3. **Tecnología y proyectos digitales** — páginas web, aplicaciones, videojuegos, mapas y herramientas.
-4. **Escritos e investigaciones** — textos, documentos, informes, ensayos e investigaciones.
-5. **Cultura, territorio y memoria** — historias locales, personas, lugares, patrimonio, fotografías y memoria regional.
+## Estructura
 
-## Arquitectura
+- `index.html`: portada, navegación, cinco puertas, cierre institucional y presentación del fundador.
+- `assets/css/style.css`: estilos base y adaptación responsive.
+- `assets/css/visitor-premium.css`: dirección visual de la experiencia pública.
+- `assets/js/app.js`: navegación, búsqueda, colecciones y reproducción integrada.
+- `data/catalogo.json`: catálogo público de obras y proyectos.
+- `assets/images/`: ilustraciones de puertas y portadas de proyectos.
 
-- `index.html`: estructura y contenido visible de la portada.
-- `assets/css/style.css`: presentación adaptable para celular, tableta y escritorio.
-- `assets/js/app.js`: navegación de categorías, búsqueda y representación del catálogo.
-- `data/catalogo.json`: datos públicos estructurados. Se agregan obras aquí, no editando a mano cada tarjeta de la portada.
+## Catálogo público
 
-## Modelo de cada obra
+El catálogo se administra desde `data/catalogo.json`. Cada elemento debe contar con:
 
-Cuando se incorpore contenido, cada ficha deberá tener un identificador estable y, según corresponda:
+- Identificador único y título descriptivo.
+- Tipo de contenido y una o más categorías.
+- Resumen breve, claro y verificable.
+- Enlace público válido cuando corresponda.
+- Autoría, procedencia y créditos confirmados cuando estén disponibles.
+- Estado editorial y visibilidad.
 
-- `id`: identificador único (ejemplo: `oca-av-001`).
-- `title`: título visible.
-- `type`: tipo de pieza (video, documental, radio, sitio web, juego, texto, fotografía, documento, etc.).
-- `categories`: una o más categorías de las cinco puertas.
-- `summary`: descripción breve.
-- `url`: enlace público al original o a la obra.
-- `thumbnail`: ruta de una imagen de portada si existe.
-- `date`: fecha de creación o publicación, si se conoce.
-- `author` y `collaborators`: autoría y colaboración confirmadas.
-- `tags`: términos para la búsqueda.
-- `status`: estado editorial; solo `published` se muestra en el portal.
-- `visibility`: `public` para material autorizado a publicarse.
+Solo se muestran los elementos que tengan simultáneamente `status: "published"` y `visibility: "public"`.
 
-Ejemplo de ficha para incorporar más adelante:
+Una pieza puede pertenecer a varias puertas sin duplicarse. No se deben inventar títulos, fechas, autorías, datos ni procedencias. Los registros cuyo título original no esté confirmado deben identificarse como registros pendientes, no presentarse como obras con nombre confirmado.
 
-```json
-{
-  "id": "oca-av-001",
-  "title": "Título confirmado de la obra",
-  "type": "documental",
-  "categories": ["audiovisual", "territorio"],
-  "summary": "Descripción breve revisada.",
-  "url": "https://ejemplo.com/obra",
-  "thumbnail": "",
-  "date": "",
-  "author": "Elías Martínez",
-  "collaborators": [],
-  "tags": ["territorio", "memoria"],
-  "status": "published",
-  "visibility": "public"
-}
-```
+## Criterios de publicación
 
-El ejemplo es una plantilla, no una obra real ni un enlace válido para publicar.
+- Publicar únicamente materiales propios o autorizados.
+- Conservar autorías, créditos y procedencias.
+- Diferenciar obras terminadas, proyectos en desarrollo y materiales pendientes de revisión.
+- Mantener fuera del repositorio público contraseñas, datos privados, originales inéditos y credenciales.
+- No mostrar enlaces a repositorios internos en la experiencia destinada a visitantes.
+- Revisar periódicamente enlaces, reproducción multimedia, textos y permisos.
+- No agregar librerías innecesarias ni exigir cuentas a quienes visitan el sitio.
 
-## Reglas importantes
+## Tecnología
 
-- Una obra tiene una ficha principal; puede relacionarse con varias categorías mediante `categories`. No duplicar fichas solo porque una pieza corresponda a más de un tema.
-- Publicar únicamente obras revisadas y con permiso para mostrarse.
-- No guardar contraseñas, credenciales, datos privados, originales inéditos ni información sensible en este repositorio público.
-- No confundir “terminado” con “publicado”. El inventario de trabajo y los materiales privados deben mantenerse fuera del catálogo público.
-- Enlaces externos se abren en una pestaña nueva desde las fichas.
-- El sitio no requiere bibliotecas de JavaScript, base de datos, servidor propio ni cuenta del visitante.
-- Las categorías principales son estables. Se amplían los tipos y etiquetas antes de inventar una nueva puerta.
-- Revisar periódicamente los enlaces rotos, las autorías, las fechas y los permisos.
+Sitio estático en HTML, CSS y JavaScript. El catálogo se carga como JSON; no requiere una base de datos ni registro de visitantes. La navegación principal conserva una alternativa básica si el catálogo no logra cargarse.
 
 ## Publicación
 
-El repositorio está preparado como sitio estático. Para que la web se publique en GitHub Pages, hay que confirmar la configuración de Pages en los ajustes del repositorio. Crear estos archivos por sí solo no garantiza que la web ya esté publicada.
+La existencia del repositorio no garantiza por sí sola que GitHub Pages esté habilitado. La URL pública y el estado de publicación deben verificarse en la configuración de Pages del repositorio antes de anunciar el sitio.
 
-## Próximas fases
+## Créditos
 
-1. Revisar la portada en celular, tableta y escritorio.
-2. Confirmar la publicación de GitHub Pages.
-3. Elegir y verificar las primeras obras.
-4. Cargar las fichas iniciales en `data/catalogo.json`.
-5. Mantener el archivo privado de trabajo separado del catálogo público.
-
-**Créditos:** estructura inicial de Universo Ocarina · Elías Martínez.
+Universo Ocarina · Ocarina Producciones · Fundador: Elías Martínez.
