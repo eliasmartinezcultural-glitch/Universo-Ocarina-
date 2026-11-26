@@ -95,7 +95,7 @@
       media = '<div class="catalog-media catalog-audio"><p>AUDIO DEL ARCHIVO</p><audio controls preload="none" src="' + escapeHtml(safeHref) + '">Tu navegador no puede reproducir este audio.</audio></div>';
       action = '';
     }
-    return '<article class="result-item"><div class="result-copy"><strong>' + title + '</strong><p>' + category + (description ? " · " + description : "") + '</p></div>' + media + '<div class="result-actions">' + action + '</div></article>';
+    return '<article class="result-item"><div class="result-copy"><strong>' + title + '</strong><p>' + category + (author ? " · " + author : "") + (description ? " · " + description : "") + '</p></div>' + media + '<div class="result-actions">' + action + '</div></article>';
   }
 
   function wireMediaStatus(root) {
