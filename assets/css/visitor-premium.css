@@ -77,3 +77,19 @@
 @media(max-width:720px){.hero.compact-hero{min-height:430px;padding-top:40px}.hero-stamp{width:100px;right:16px;top:82px;opacity:.38}.stamp-number{font-size:45px}.stamp-label{font-size:7px;margin-top:6px}.stamp-coordinate{font-size:5px}.hero-content{max-width:100%;padding-right:5px}.hero .eyebrow{margin-top:32px}.compact-hero h1{font-size:clamp(48px,12vw,74px);max-width:100%}.hero-copy{max-width:440px;font-size:13px}.hero-landscape{inset:0;opacity:.45}.hero-foot{gap:10px;flex-wrap:wrap}.hero-foot span:last-child{text-align:right}.compact-explore{padding-top:45px}.doors-grid{gap:9px}.door,.door:nth-child(4){min-height:230px;padding:16px}.door:last-child{grid-column:1/-1;min-height:190px}.door-icon{font-size:28px;margin:19px 0 14px}.door strong{font-size:17px}.collection-artwork img{aspect-ratio:16/8}.collection-feature{min-height:0;padding:16px}.result-item:has(.project-art){padding:15px}.project-art img{aspect-ratio:16/8}.result-item:has(.project-art) .result-copy strong{font-size:21px}.result-item:has(.project-art) .result-actions a.project-visit{width:100%;justify-content:space-between}}
 @media(max-width:380px){.hero-stamp{display:none}.compact-hero h1{font-size:44px}.door,.door:nth-child(4){min-height:210px;padding:13px}}
 @media(prefers-reduced-motion:reduce){.door,.project-art img{transition:none!important}}
+
+
+/* Fundador · cierre humano del recorrido */
+.founder-section{position:relative;overflow:hidden;border-top:1px solid #dceca51f;background:radial-gradient(ellipse at 12% 80%,#d5e88d10,transparent 35%),linear-gradient(125deg,#151811,#0b0d0a 72%);padding:clamp(58px,8vw,108px) 0}
+.founder-section:after{content:"O";position:absolute;right:-.04em;bottom:-.48em;font-size:clamp(280px,42vw,610px);font-weight:900;letter-spacing:-.12em;line-height:1;color:#f4f0e504;pointer-events:none}
+.founder-inner{position:relative;z-index:1;width:min(1320px,calc(100% - 56px));margin:0 auto;display:grid;grid-template-columns:.72fr 1.6fr;gap:clamp(32px,8vw,120px);align-items:center}
+.founder-index{min-height:260px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #dceca52c;padding:22px;color:#aeb995;font:9px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em}
+.founder-index strong{font:800 clamp(100px,17vw,210px)/.8 Arial,sans-serif;letter-spacing:-.13em;color:#dceca5;text-shadow:0 0 55px #d8f47718}
+.founder-copy{max-width:760px}
+.founder-copy h2{font-size:clamp(38px,5.8vw,76px);line-height:.98;letter-spacing:-.075em;margin:0 0 24px}
+.founder-copy h2 em{font-style:normal;color:#dbe99b}
+.founder-copy>p:not(.eyebrow){max-width:650px;color:#c2c5b7;font-size:clamp(13px,1.25vw,16px);line-height:1.95;margin-bottom:28px}
+.founder-channel{display:inline-flex;align-items:center;gap:25px;border-bottom:1px solid #dceca56b;padding:12px 0;color:#dceca5;font-size:12px;font-weight:700}
+.founder-channel span{font-size:18px;transition:transform .2s}
+.founder-channel:hover span{transform:translate(3px,-3px)}
+@media(max-width:720px){.founder-section{padding:58px 0}.founder-inner{width:calc(100% - 40px);grid-template-columns:1fr;gap:28px}.founder-index{min-height:170px;padding:16px}.founder-index strong{font-size:118px}.founder-copy h2{font-size:clamp(38px,10vw,56px)}.founder-channel{width:100%;justify-content:space-between;gap:12px}}
